@@ -1,12 +1,10 @@
 import React from 'react';
-import {StyleProvider} from '../context/StyleContext';
-import styled, {css} from 'styled-components'
-import {useState, useContext} from 'react'
-import {StyleContext} from '../context/StyleContext'
-import { FaTwitter, FaYoutube, FaInstagram, FaTwitterSquare } from 'react-icons/fa';
+import styled from 'styled-components'
+
+import { FaTwitter, FaYoutube, FaInstagram　} from 'react-icons/fa';
 
 
-const AProfile = () => {
+const AProfile:React.FC = () => {
     return (
         <>
            <ProfilTitle>Profil</ProfilTitle>

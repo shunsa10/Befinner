@@ -1,7 +1,6 @@
 import React from 'react';
-import {StyleProvider} from '../context/StyleContext';
 import styled, {css} from 'styled-components'
-import {useState, useContext} from 'react'
+import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
 
 

@@ -1,7 +1,6 @@
 import React from 'react';
-import {StyleProvider} from '../context/StyleContext';
 import styled, {css} from 'styled-components'
-import {useState, useContext} from 'react'
+import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
 
 
@@ -31,10 +30,11 @@ const Headers = styled.header `
     position: absolute;
     display: flex;
     justify-content: space-between;
-    background-color: #208dcc;
+    backdrop-filter: blur(15px);
+    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     padding: 20px 50px;
     z-index: 10;
     box-sizing: border-box;

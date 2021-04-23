@@ -1,15 +1,12 @@
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  BrowserRouter
+  Link
 } from 'react-router-dom';
 import React from 'react';
 import styled, {css} from 'styled-components'
-import {useState, useContext} from 'react'
+import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
-import { type } from 'node:os';
+
 // import Header from './Header';
 
 
@@ -25,7 +22,6 @@ const Nav: React.FC = () => {
      
     return (
         <UlNav>
-            
             <Link to="/"><LiNav theme={{ time: 1}} styles={styles ? true : false}><AaNav>Home</AaNav></LiNav></Link>
             <Link to ="/About"><LiNav theme={{ time: 2}}　styles={styles ? true : false}><AaNav>About</AaNav></LiNav></Link>
             <Link to ="/Todo"><LiNav theme={{ time: 3}}　styles={styles ? true : false}><AaNav>Todo</AaNav></LiNav></Link>

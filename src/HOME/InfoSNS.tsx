@@ -1,9 +1,12 @@
+import {
+  BrowserRouter as Router,
+  Link,
+} from 'react-router-dom';
 import React from 'react';
 import styled, {css} from 'styled-components'
-import {useState, useContext} from 'react'
+import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
-// import { type } from 'node:os';
-// import {Component} from 'react'
+import moduleName, { auth } from '../firebase/config'
 
 type ToggleProps = {
     styles?: boolean
@@ -11,13 +14,16 @@ type ToggleProps = {
 
 const InfoSNS: React.FC = () => {
     const [styles, setStyles] =useContext(StyleContext);
+    const logout = () => 
+    auth.signOut()
+    .then(() => console.log('ログアウトしたよ'))
+    .catch((err) => console.log('ログアウトに失敗'))
     return (
         
        <UlSns> 
-           <LiSns theme={{ time: 1}}　styles={styles ? true : false}><Asns>LOGIN</Asns></LiSns>
-           <LiSns theme={{ time: 2}}　styles={styles ? true : false}><Asns>SIGNIN</Asns></LiSns>
-           <LiSns theme={{ time: 3}}　styles={styles ? true : false}><Asns>LOGOUT</Asns></LiSns>
-           
+           <Link to="Account"><LiSns theme={{ time: 1}}　styles={styles ? true : false}><Asns>SIGNIN</Asns></LiSns></Link>
+           <Link to=""><LiSns theme={{ time: 2}}　styles={styles ? true : false}><Asns>SIGNUP</Asns></LiSns></Link>
+           <Link　onClick={logout} to=""><LiSns theme={{ time: 3}}　styles={styles ? true : false}><Asns>SIGNOUT</Asns></LiSns></Link>
        </UlSns>
     );
 };
@@ -47,7 +53,6 @@ const LiSns = styled.li<ToggleProps> `
     
     ` : ''}
     &:hover {
-        
         background: #82fff5;
     }
 `

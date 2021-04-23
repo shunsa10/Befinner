@@ -1,8 +1,6 @@
 import React from 'react';
-import {StyleProvider} from '../context/StyleContext';
-import styled, {css} from 'styled-components'
-import {useState, useContext} from 'react'
-import {StyleContext} from '../context/StyleContext'
+import styled from 'styled-components'
+
 
 
 const Main:React.FC = () => {
@@ -12,12 +10,12 @@ const Main:React.FC = () => {
         <TextDiv>
             <AboutTitleText>ABOUT</AboutTitleText>
             <AboutText>
-                ccccccccccccccccccccccccccc
-                ccccccccccccccccccccccccccc
-                ccccccccccccccccccccccccccc
-                ccccccccccccccccccccccccccc
-                ccccccccccccccccccccccccccc
-                ccccccccccccccccccccccccccc
+                ccccccccccccccccccccccccccc<br />
+                ccccccccccccccccccccccccccc<br />
+                ccccccccccccccccccccccccccc<br />
+                ccccccccccccccccccccccccccc<br />
+                ccccccccccccccccccccccccccc<br />
+                ccccccccccccccccccccccccccc<br />
 
             </AboutText>
         </TextDiv>
@@ -57,12 +55,16 @@ const AboutTitleText = styled.h2 `
 color: white;
 font-weight: lighter;
 font-size: 3rem;
-position: absolute;
-margin: 0;
+margin: 0 auto;
 opacity: .5;
 
 `
 
 const AboutText = styled.p `
+margin: 0 auto;
+display: flex;
+justify-content: center;
+color: #fff;
+opacity: .7;
 
 `

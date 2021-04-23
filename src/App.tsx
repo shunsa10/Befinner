@@ -2,28 +2,24 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useLocation,
   BrowserRouter
 } from 'react-router-dom';
-import { AnimatePresence} from "framer-motion";
 import React from 'react';
 import Home from './HOME/Home'
 import About from './ABOUT/About'
 import Todo from './TODO/Todo'
+import Account from './ACCOUNT/Account'
 import {StyleProvider} from './context/StyleContext';
-
-
+import {AccountProvider} from './context/AccountContext'
 
 
 const App:React.FC = () => {
     // const location = useLocation();
     // const [_, rootPath] = location.pathname.split("/");
     return (
-        
+        <AccountProvider>
         <StyleProvider>
             <BrowserRouter>
-            {/* <AnimatePresence exitBeforeEnter initial={true}> */}
                 <Switch 
                 // location={location}  key={rootPath}
                 >
@@ -36,14 +32,18 @@ const App:React.FC = () => {
                     <Route exact path='/Todo' component={Todo}>
                         <Todo />
                     </Route>
+                    <Route exact path='/Account' component={Account}>
+                        <Account />
+                    </Route>
                 </Switch >
-                {/* </AnimatePresence> */}
             </BrowserRouter>
         </StyleProvider>
+        </AccountProvider>
        
     );
 };
 
 export default App;
+
 
 

@@ -4,8 +4,9 @@ import AHeader from './AHeader';
 import ANav from './ANav'
 import AMain from './AMain'
 import AProfile from './AProfile'
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import {motion} from "framer-motion";
+import AFooter from './AFooter';
 
 
 const About:React.FC = () => {
@@ -28,6 +29,7 @@ const About:React.FC = () => {
            </AboutProSection>
 
         </MainDiv>
+        <AFooter />
       </StyleProvider>
     </motion.div>
     );
@@ -42,6 +44,7 @@ const MainDiv = styled.div `
     font-family: 'poppins', sans-serif;
     width: 100%;
     height: 100%;
+    background-color: #cccccc;
 
 `
 const AboutMainSection = styled.section `

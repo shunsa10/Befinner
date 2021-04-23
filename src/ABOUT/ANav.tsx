@@ -1,15 +1,12 @@
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
   Link,
-  BrowserRouter
 } from 'react-router-dom';
 import React from 'react';
 import styled, {css} from 'styled-components'
-import {useState, useContext} from 'react'
+import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
-import { type } from 'node:os';
+
 
 
 type ToggleProps = {
