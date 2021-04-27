@@ -9,8 +9,10 @@ import Home from './HOME/Home'
 import About from './ABOUT/About'
 import Todo from './TODO/Todo'
 import Account from './ACCOUNT/Account'
+import Local from './LOCAL/Local'
 import {StyleProvider} from './context/StyleContext';
 import {AccountProvider} from './context/AccountContext'
+import {ReviewProvider} from './context/ReviewCotext'
 
 
 const App:React.FC = () => {
@@ -20,9 +22,7 @@ const App:React.FC = () => {
         <AccountProvider>
         <StyleProvider>
             <BrowserRouter>
-                <Switch 
-                // location={location}  key={rootPath}
-                >
+                <Switch>
                     <Route exact path='/' component={Home}>
                         <Home />
                     </Route>
@@ -35,6 +35,11 @@ const App:React.FC = () => {
                     <Route exact path='/Account' component={Account}>
                         <Account />
                     </Route>
+                    <ReviewProvider>
+                    <Route exact path='/Local' component={Local}>
+                        <Local />
+                    </Route>
+                    </ReviewProvider>
                 </Switch >
             </BrowserRouter>
         </StyleProvider>

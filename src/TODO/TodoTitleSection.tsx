@@ -5,11 +5,12 @@ import { tab } from '../media';
 const TodoTitleSection:React.FC = () => {
     return (
         <TitleWrap>
-            <H2TextDiv>
-            <H2Text>To beginners</H2Text>
-            </H2TextDiv>
-            <TitleDiv>
 
+            <H2TextDiv>
+                <H2Text>To beginners</H2Text>
+            </H2TextDiv>
+
+            <TitleDiv>
                 <TitleImg></TitleImg>
 
                 <TitleText>
@@ -48,6 +49,7 @@ align-content: space-between;
 overflow: hidden;
 `
 const H2TextDiv = styled.div `
+position: relative;
 width: 80%;
 display: flex;
 justify-content: center;
@@ -57,19 +59,19 @@ overflow: hidden;
 margin: 0 auto;
 `
 const H2Text = styled.h2 `
+    position: relative;
+    bottom: 1rem;
     width: 100%;
     font-family: "Times New Roman",Times,serif;
     font-weight: normal;
-    padding-top: 5px;
-
     letter-spacing: 0.08em;
     border-bottom: 1px solid rgba(35, 24, 21, 0.3);
     text-align: center;
     z-index: 9;
-
 `
 const TitleDiv = styled.div `
 position: relative;
+top: 1rem;
 display: flex;
 height: 100vh;
 padding: 0 6rem;

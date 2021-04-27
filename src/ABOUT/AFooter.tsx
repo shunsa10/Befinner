@@ -12,7 +12,7 @@ const AFooter:React.FC = () => {
               <Link to="/"><LiFoo><AaFoo>HOME</AaFoo></LiFoo></Link>
              <Link to="/About"><LiFoo><AaFoo>ABOUT</AaFoo></LiFoo></Link>
               <Link to="/Todo"><LiFoo><AaFoo>TODO</AaFoo></LiFoo></Link>
-              <Link to="/"><LiFoo><AaFoo>SONTACT</AaFoo></LiFoo></Link>
+              <Link to="/Local"><LiFoo><AaFoo>LOCAL</AaFoo></LiFoo></Link>
             </UlFoo>
           </FooterDiv>
           <FooterLower>
