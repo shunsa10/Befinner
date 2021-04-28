@@ -1,7 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Link,
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React from 'react';
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
@@ -15,7 +12,7 @@ type ToggleProps = {
 
 
 const TNav:React.FC = () => {
-    const [styles, setStyles] =useContext(StyleContext);
+    const [styles] =useContext(StyleContext);
     return (
          <UlNav styles={styles ? true : false}>
             <Link to="/"><LiNav theme={{ time: 1}} styles={styles ? true : false}><AaNav>Home</AaNav></LiNav></Link>

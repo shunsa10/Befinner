@@ -1,4 +1,3 @@
-
 import React from 'react';
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
@@ -14,7 +13,7 @@ type AccountProps = {
 }
 
 const Account:React.FC = () => {
-const [account, setAccount] = useContext(AccountContext);
+const [account] = useContext(AccountContext);
     return (
       
       <SectionAC account={account ? true : false}>

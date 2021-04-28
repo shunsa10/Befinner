@@ -1,7 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Link
-} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import React from 'react';
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
@@ -18,7 +15,7 @@ type ToggleProps = {
 //scでporpsを渡す
 
 const Nav: React.FC = () => {
-     const [styles, setStyles] =useContext(StyleContext);
+     const [styles] =useContext(StyleContext);
      
     return (
         <UlNav styles={styles ? true : false}>

@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 import LHeader from './LHeader'
 import LNav from './LNav'
 import LCafe from './LCafe'
-import LRview from './LReview'
+// import LRview from './LReview'
 import LMain from './LMain'
 import styled from 'styled-components'
 

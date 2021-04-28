@@ -11,7 +11,7 @@ type ToggleProps = {
 const Title:React.FC = () => {
     console.log(process.env.REACT_APP_PUBLIC_URL);
     console.log(window.location.origin);
-    const [styles, setStyles] =useContext(StyleContext);
+    const [styles] =useContext(StyleContext);
     return (
         <>
           <DivGlass styles={styles ? true : false}></DivGlass>

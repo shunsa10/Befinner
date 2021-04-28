@@ -25,11 +25,7 @@ export default LMain;
 
 const WrapTextDiv = styled.div `
 width: 100%;
-
-
 `
-
-
 const TextDiv = styled.div `
    position: relative;
    top: 10rem;

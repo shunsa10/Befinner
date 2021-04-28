@@ -1,7 +1,5 @@
 import React, { ReactElement } from 'react';
 import styled, {css} from 'styled-components'
-import {ReviewContext} from '../context/ReviewCotext'
-import {useContext} from 'react'
 
 
 type ToggleProps = {

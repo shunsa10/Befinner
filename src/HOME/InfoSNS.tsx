@@ -1,19 +1,16 @@
-import {
-  BrowserRouter as Router,
-  Link,
-} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import React from 'react';
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
-import moduleName, { auth } from '../firebase/config'
+import { auth } from '../firebase/config'
 
 type ToggleProps = {
     styles?: boolean
 }
 
 const InfoSNS: React.FC = () => {
-    const [styles, setStyles] =useContext(StyleContext);
+    const [styles] =useContext(StyleContext);
     const logout = () => 
     auth.signOut()
     .then(() => console.log('ログアウトしたよ'))

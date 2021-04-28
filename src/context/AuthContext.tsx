@@ -1,6 +1,6 @@
 import { createContext, FC } from 'react';
-import {ReactNode} from 'react'
-import {ReactChild} from 'react'
+// import {ReactNode} from 'react'
+// import {ReactChild} from 'react'
 
 //memo
 //glovarStateでログイン周りを管理

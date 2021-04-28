@@ -53,9 +53,7 @@ const GadgetSection:React.FC = () => {
             </GadgetConteiner>
             <GadgetConteiner>
                 <Gadgetbox>
-                    {/* <Ig> */}
                   <GadgetImg3></GadgetImg3>
-                    {/* </Ig> */}
                     <GadgetContent>
                         <GadgetTextBox>
                             <GadgetH2>Gadget</GadgetH2>
@@ -113,28 +111,7 @@ ${GadgetConteiner}:hover & {
      box-shadow: 0 25px 40px rgba(0, 0, 0, .5);
  }
 `
-const Ig = styled.div `
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-&::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    z-index: 1;
-    background: linear-gradient(180deg,#00aeff,#000);
-
-    &::before::hover {
-        opacity: 0;
-    }
-}
-`
+  
 const GadgetImg0 = styled.div `
 position: absolute;
 top: 0;

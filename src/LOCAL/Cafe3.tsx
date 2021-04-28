@@ -1,14 +1,5 @@
 import React from 'react';
 import styled, {css} from 'styled-components'
-import {ReviewContext} from '../context/ReviewCotext'
-import {useContext} from 'react'
-
-import {useEffect,useRef} from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-
 
 type ToggleProps = {
     Reviews?: boolean
@@ -16,35 +7,6 @@ type ToggleProps = {
 
 const Cafe3:React.FC = () => {
 
-    useEffect(() => {
-        if(process) {
-            gsap.registerPlugin(ScrollTrigger)
-            setAnimation()
-        }
-    }, [])
-
-  const setAnimation = () => {
-    gsap.fromTo(
-      '#SD',
-      { opacity: 0, y: 10 }, //fromの設定
-      {  //toの設定
-        opacity: 1,
-        y: 0,
-        duration: 2,
-        scrollTrigger: {
-          trigger: '#SD',
-          start: 'top 50%', //要素のトップが、画面の中央まできたら開始
-          end: 'bottom 50%', //要素のボトムが、画面の中央まできたら終了
-          onEnter: () => {
-            console.log('scroll In')
-          },
-          onEnterBack: () => {
-            console.log('scroll Back')
-          },
-        },
-      }
-    )
-  }
 
     return (
         <>

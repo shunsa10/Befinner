@@ -1,5 +1,4 @@
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   BrowserRouter
@@ -21,6 +20,7 @@ const App:React.FC = () => {
     return (
         <AccountProvider>
         <StyleProvider>
+        <ReviewProvider>
             <BrowserRouter>
                 <Switch>
                     <Route exact path='/' component={Home}>
@@ -35,13 +35,12 @@ const App:React.FC = () => {
                     <Route exact path='/Account' component={Account}>
                         <Account />
                     </Route>
-                    <ReviewProvider>
                     <Route exact path='/Local' component={Local}>
                         <Local />
                     </Route>
-                    </ReviewProvider>
                 </Switch >
             </BrowserRouter>
+        </ReviewProvider>
         </StyleProvider>
         </AccountProvider>
        
