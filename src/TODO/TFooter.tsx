@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
 // import { pc, sp, tab } from '../media';
 import {Link} from 'react-router-dom';
 
 const Footer:React.FC = () => {
+
+  useEffect(() => {
+      window.scrollTo(0, 0)
+  }, []);
     return (
         <FooterMain>
           <FooterDiv>

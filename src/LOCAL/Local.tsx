@@ -1,31 +1,36 @@
 import React from 'react'
+import {StyleProvider} from '../context/StyleContext';
 import {motion} from "framer-motion";
 import LHeader from './LHeader'
 import LNav from './LNav'
 import LCafe from './LCafe'
-// import LRview from './LReview'
+import LRview from './LReview'
 import LMain from './LMain'
+import LFooter from './LFooter'
 import styled from 'styled-components'
 
 
 const Local:React.FC = () => {
     return (
-        <>
-         <motion.div
+<>
+    <motion.div
             animate={{ opacity:1 }}
             initial={{ opacity:0 }}
             exit={{ opacity:0 }}
             transition={{ duration: 0.4}}>
-    <LocalMainDiv>
-        <LHeader />
-        <LNav />
-        <LMain />
-        <LCafe />
-        {/* <LRview /> */}
-    </LocalMainDiv>
-        </motion.div>
+      <StyleProvider>
+        <LocalMainDiv>
+            <LHeader />
+            <LNav />
+            <LMain />
+            <LCafe />
+            <LRview />
+            <LFooter />
+        </LocalMainDiv>
+      </StyleProvider>
+    </motion.div>
 
-        </>
+</>
     )
 };
 

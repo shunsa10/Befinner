@@ -1,7 +1,8 @@
 import { Button, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import React from 'react';
+
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
 import {AccountContext} from '../context/AccountContext'
@@ -45,55 +46,69 @@ const Signin:React.FC = () => {
      const [email, setEmail] = useState('');
      const [password, setPassword] = useState('');
 
+     const [isSigninSuccess, setIsSigninSuccess] = useState(false);
 
      const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-         e.preventDefault();
+        e.preventDefault();
         auth.signInWithEmailAndPassword(email, password)
-        .then(() => {
-            
-            history.push('/');
-        })
-        .catch((error) => {
 
+        .then(() => {
+            console.log("成功");
+            setIsSigninSuccess(true) 
+            // history.push('/About');
+        })
+
+        .catch((error) => {
             console.log('失敗', error);
         });
      };
+     //レンダリングから逃れるための遅延
+     useEffect(() => {
+       if(isSigninSuccess){history.push("/About");}
+     },[isSigninSuccess])
      
     return (
-        
-        <SigninBxAC>
-          <SigninImgDiv account={account ? true : false}><SigninImgBxAC src={'./img/img11.jpeg'} /></SigninImgDiv>
-              <SigninInfoAC account={account ? true : false}>
-                  <SigninForm onSubmit={handleSubmit}>
-                    <SigninH2>Sign In</SigninH2>
-                        <TextField className={classes.Input} 
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        fullWidth label='メールアドレス'
-                        variant='outlined'
-                        />
-                        <TextField className={classes.Input} 
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        fullWidth label='パスワード'
-                        variant='outlined'
-                        />
-                        <Button 
-                        type='submit'
-                        className={classes.Submit}
-                        variant='contained'
-                        >Login</Button>
-                    <SigninP>自分用のアカウントを作成しますか？
-                        <SigninA
-                        account={account ? true : false}
-                        onClick={() => setAccount(!account)}
-                        >Sign Up</SigninA>
-                    </SigninP>
-                  </SigninForm>
-              </SigninInfoAC>
-        </SigninBxAC>
-       
-    )
+      <SigninBxAC>
+        <SigninImgDiv account={account ? true : false}>
+          <SigninImgBxAC src={"./img/img11.jpeg"} />
+        </SigninImgDiv>
+        <SigninInfoAC account={account ? true : false}>
+          <SigninForm onSubmit={handleSubmit}>
+            <SigninH2>Sign In</SigninH2>
+            <TextField
+              className={classes.Input}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              fullWidth
+              label="メールアドレス"
+              variant="outlined"
+            />
+            <TextField
+              className={classes.Input}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              fullWidth
+              label="パスワード"
+              variant="outlined"
+            />
+              <Button
+                type="submit"
+                className={classes.Submit}
+                variant="contained">
+                Login
+              </Button>
+            <SigninP>
+              自分用のアカウントを作成しますか？
+              <SigninA
+                account={account ? true : false}
+                onClick={() => setAccount(!account)}>
+                Sign Up
+              </SigninA>
+            </SigninP>
+          </SigninForm>
+        </SigninInfoAC>
+      </SigninBxAC>
+    );
 }
 
 export default Signin;

@@ -4,24 +4,39 @@ import styled, {css} from 'styled-components'
 import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
 import { auth } from '../firebase/config'
+import {AuthContext} from '../context/AuthContext'
 
 type ToggleProps = {
     styles?: boolean
 }
 
 const InfoSNS: React.FC = () => {
+    // const state = useContext(AuthContext)
+    // console.log(state);
+    
     const [styles] =useContext(StyleContext);
     const logout = () => 
     auth.signOut()
-    .then(() => console.log('ログアウトしたよ'))
+    .then(() => console.log('ログアウトしました'))
     .catch((err) => console.log('ログアウトに失敗'))
     return (
-        
-       <UlSns> 
-           <Link to="Account"><LiSns theme={{ time: 1}}　styles={styles ? true : false}><Asns>SIGNIN</Asns></LiSns></Link>
-           <Link to=""><LiSns theme={{ time: 2}}　styles={styles ? true : false}><Asns>SIGNUP</Asns></LiSns></Link>
-           <Link　onClick={logout} to=""><LiSns theme={{ time: 3}}　styles={styles ? true : false}><Asns>SIGNOUT</Asns></LiSns></Link>
-       </UlSns>
+      <UlSns>
+        <Link to="Account">
+          <LiSns theme={{ time: 1 }} styles={styles ? true : false}>
+            <Asns>SIGNIN</Asns>
+          </LiSns>
+        </Link>
+        <Link to="Account">
+          <LiSns theme={{ time: 2 }} styles={styles ? true : false}>
+            <Asns>SIGNUP</Asns>
+          </LiSns>
+        </Link>
+        <Link onClick={logout} to="">
+          <LiSns theme={{ time: 3 }} styles={styles ? true : false}>
+            <Asns>SIGNOUT</Asns>
+          </LiSns>
+        </Link>
+      </UlSns>
     );
 };
 export default InfoSNS;

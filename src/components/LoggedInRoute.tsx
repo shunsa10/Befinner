@@ -1,21 +1,24 @@
 import {Redirect} from 'react-router-dom'
-import {Children, useContext} from 'react'
-import {AccountContext} from '../context/AccountContext'
+import {Children, useContext, FC} from 'react'
+// import {AccountContext} from '../context/AccountContext'
+import {AuthContext} from '../context/AuthContext'
 
-const LoggedInRoute = () => {
-    const user = useContext(AccountContext)
+const LoggedInRoute:FC = ({children}) => {
+    //ジェネリクス
+    let user = useContext<{loading: boolean, data:firebase.default.User | null}>(AuthContext)
+    
 
-    // if (user.loading) {
-    //     return <h1>ロード中</h1>
-    // }
+    if (user.loading) {
+        return <Redirect to="/About" />;
+    }
 
-    // if(user.data === null) {
-    //     return <Redirect to='/About'/>
-    // }
+    if(user.data === null) {
+        return <Redirect to="/Account" />;
+    }
 
     return (
-        <>{Children}</>
+        <>{children}</>
     )
 };
 
-export default LoggedInRoute
+export default LoggedInRoute;

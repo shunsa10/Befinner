@@ -14,15 +14,38 @@ type ToggleProps = {
 const LNav:React.FC = () => {
     const [styles] =useContext(StyleContext);
     return (
+    <LNavDiv styles={styles ? true : false}>
          <UlNav styles={styles ? true : false}>
             <Link to="/"><LiNav theme={{ time: 1}} styles={styles ? true : false}><AaNav>Home</AaNav></LiNav></Link>
             <Link to ="/About"><LiNav theme={{ time: 2}}　styles={styles ? true : false}><AaNav>About</AaNav></LiNav></Link>
             <Link to ="/Todo"><LiNav theme={{ time: 3}}　styles={styles ? true : false}><AaNav>Todo</AaNav></LiNav></Link>
             <Link to ="/Local"><LiNav theme={{ time: 4}}　styles={styles ? true : false}><AaNav>LOCAL</AaNav></LiNav></Link>
         </UlNav>
+    </LNavDiv>
     )
 }
 export default LNav;
+
+
+const LNavDiv = styled.div<ToggleProps> `
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    backdrop-filter: blur(15px);
+    z-index: 1;
+    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+    transition-delay: 1s;
+    ${({styles}) => styles ? css `
+     height: 100%;
+     backdrop-filter: blur(15px);
+     box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
+     transition-delay: 0s;
+      z-index: 100;
+    ` : ''}
+`
 
 
 const UlNav = styled.ul<ToggleProps> `

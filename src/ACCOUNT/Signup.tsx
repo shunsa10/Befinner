@@ -59,7 +59,7 @@ const Signup:React.FC = () => {
                //コンパイルエラーが出て（？）をつけると解消される
                 .then(() =>{
                     console.log('成功', userCredential);
-                    history.push('/');
+                    history.push("/About");
                 });
             })
             .catch((error) =>{

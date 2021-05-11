@@ -1,5 +1,12 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled, {css} from 'styled-components'
+
+import { gsap } from 'gsap'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 type ToggleProps = {
     Reviews?: boolean
@@ -8,17 +15,49 @@ type ToggleProps = {
 const Cafe3:React.FC = () => {
 
 
+    const revealRefs = useRef([]);
+  revealRefs.current = []
+
+   useEffect(() => {
+
+    revealRefs.current.forEach((el) => {
+      gsap.fromTo(el, {
+        autoAlpha: 0
+      }, {
+         duration: 1,
+            autoAlpha: 1,
+            ease: 'none',
+            scrollTrigger: {
+                id: `TextDiv3`,
+                trigger: el,
+                start: 'top center+=200',
+                toggleActions: 'play none none reverse',
+                // markers: true
+            }
+        });
+    });
+    console.log("on");
+  }, [])
+    
+  const addToRefs = (el: never) => {
+    if(el && !revealRefs.current.includes(el)){
+      revealRefs.current.push(el)
+    }
+  };
+
+
+
     return (
         <>
     <ContentDiv>
       <TitleTextDiv className='SD'>
 
-        <TextDiv3> 
-            <BannerH2>
+        <TextDiv3 ref={addToRefs}> 
+            <BannerH2 ref={addToRefs}>
                 EAT Healthy<br />
                 Stay Healthy
             </BannerH2>
-                <BannerP>
+                <BannerP ref={addToRefs}>
                      This is really nice Sorry to distrub, I made this website but sir<br />
                      Facebook, Instagram and twitter.symbol is so <br />
                      long.... Please help mePlease provide solution <br />
@@ -32,7 +71,7 @@ const Cafe3:React.FC = () => {
                 </Icons>
         </TextDiv3>
 
-            <BannerImgDiv3>
+            <BannerImgDiv3 ref={addToRefs}>
                 <BannerImg3 src={'./img/IMG_9220.png'} />  ////
             </BannerImgDiv3>
 
@@ -93,20 +132,11 @@ letter-spacing: 1px;
 font-size: 1rem;
 text-decoration: none;
 padding-left: 15px;
-&::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 100%;
-    background: #80d833;
-    z-index: -1;
-    transition: .5s ease-in-out;
-    &::before:hover {
-        width: 100%;
-    }
-}`
+transition: 1s;
+&:hover {
+color: #81ffd5;
+}
+`
 
 const BannerImgDiv3 = styled.div `
     position: relative;

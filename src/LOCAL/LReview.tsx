@@ -90,25 +90,6 @@ const LReview:React.FC = () => {
             </ReviewDiv>
 
 
-            <ReviewDiv>
-                <ReviewDivImg
-                Reviews={Reviews ? true : false}
-                onClick={() => setReviews(!Reviews)}>
-                    <ReviewImg Reviews={Reviews ? true : false} src={'./img/img111.jpg'} />
-                    <ReviewH2 Reviews={Reviews ? true : false}>Text Review</ReviewH2>
-                    <ReviewTextDiv Reviews={Reviews ? true : false}>
-                        <ReviewH3>Img Review</ReviewH3>
-                        <ReviewP>
-                             I have been watching your video tutorial <br />
-                             2 years and I also have my own YouTube <br />
-                             , on which I teach ReactJs and NodeJa <br />
-                        </ReviewP>
-                    </ReviewTextDiv>
-                </ReviewDivImg>
-            </ReviewDiv>
-
-
-
         </SectionReview>
 
     )
@@ -122,22 +103,24 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 position: relative;
+top: 2rem;
 display: flex;
 justify-content: center;
 align-items: center;
+background-color: #dae0d1;
+padding-top: 3rem;
 flex-wrap: wrap;
-min-height: 100vh;
-background-color: #ecba7d;
 `
 
 
 const ReviewDiv = styled.div`
 position: relative;
+top: -7rem;
 width: 200px;
 height: 200px;
 margin: 10px;
 overflow: hidden;
-cursor: pointer;
+
 `
 
 const ReviewDivImg = styled.div<ToggleProps>`
@@ -165,6 +148,10 @@ left: 0;
 width: 100%;
 height: 100%;
 object-fit: cover;
+transition: .3s ease-in-out;
+&:hover {
+ filter: blur(3px);
+}
 
  ${({Reviews}) => Reviews ? css `
         position: absolute;
@@ -185,7 +172,7 @@ ${({Reviews}) => Reviews ? css `
         opacity: 1;
         visibility: visible;
         text-align: center;
-        color: #fff;
+        color: #000000;
         font-size: 2rem;
         font-weight: 300;
         margin-top: 15px;
@@ -197,7 +184,7 @@ ${({Reviews}) => Reviews ? css `
 
 const ReviewTextDiv = styled.div<ToggleProps>`
 position: absolute;
-bottom: 50px;
+bottom: 40px;
 right: 50px;
 left: 50px;
 opacity: 1;
@@ -223,5 +210,5 @@ color: #fff;
 `
 
 const ReviewP = styled.p `
-
+color: #fff;
 `

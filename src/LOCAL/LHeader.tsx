@@ -9,12 +9,12 @@ type ToggleProps = {
 }
 
 
-const LHeader:React.FC = () => {
+const THeader:React.FC = () => {
     const [styles, setStyles] = useContext(StyleContext);
     
     return (
        <Headers>
-            <Logo href="#" className="logo">BeFinner</Logo>
+            <Logo href="/" className="logo">BeFinner</Logo>
             <Toggle 
             styles={styles ? true : false}
             onClick={() => setStyles(!styles)}
@@ -24,22 +24,22 @@ const LHeader:React.FC = () => {
         </Headers>
     )
 }
-export default LHeader;
+export default THeader;
 
 
-const Headers = styled.header `
+const Headers = styled.header<ToggleProps> `
     position: absolute;
     display: flex;
     justify-content: space-between;
     backdrop-filter: blur(15px);
     box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
-    
     top: 0;
     left: 0;
     width: 100vw;
     padding: 20px 50px;
-    z-index: 10;
+    z-index: 1000;
     box-sizing: border-box;
+
 `
 
 const Logo = styled.a `
@@ -73,6 +73,7 @@ position: relative;
         background-repeat: no-repeat;
         cursor: pointer;
         background-size: 30px;
+        z-index: 1000;
     ` : ''}
 
     

@@ -1,4 +1,5 @@
-import { createContext, FC } from 'react';
+import { createContext, FC, useEffect, useState } from "react";
+import { auth } from "../firebase/config";
 // import {ReactNode} from 'react'
 // import {ReactChild} from 'react'
 
@@ -11,12 +12,25 @@ import { createContext, FC } from 'react';
 //FunctionComponent FC  プロップスの型まで推論してくれる
 //VFC ではプロップスの定義は必要
 
-export const AuthContext = createContext<[boolean, (account:boolean) => void]>([false, () => {}]);
+export const AuthContext = createContext<{
+  loading: boolean;
+  data: firebase.default.User | null;
+}>({ loading: true, data: null });
 
-export const AuthProvider:FC = ({children}) => {
-    const bool: [boolean, (account: boolean) => void] = [false, () => {}];
-    const state:[boolean, (account: boolean) => void] = bool;
+export let AuthProvider: FC = ({ children }) => {
+  let [user, setUser] = useState<{
+    loading: boolean;
+    data: firebase.default.User | null;
+  }>({ loading: true, data: null });
+  useEffect(() => {
+    //ログイン情報の取得
+    auth.onAuthStateChanged((userState) => {
+      setUser({ loading: false, data: userState });
+    });
+  }, []);
 
-    return <AuthContext.Provider value={state}>{children}</AuthContext.Provider>;
+  const bool: [boolean, (account: boolean) => void] = [false, () => {}];
+  const state: [boolean, (account: boolean) => void] = bool;
 
-}
+  return <AuthContext.Provider value={user}>{children}</AuthContext.Provider>;
+};

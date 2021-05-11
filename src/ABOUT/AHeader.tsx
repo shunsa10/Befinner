@@ -13,7 +13,7 @@ const AHeader:React.FC = () => {
     const [styles, setStyles] = useContext(StyleContext);
     return (
        <Headers>
-            <Logo href="#" className="logo">BeFinner</Logo>
+            <Logo href="/" className="logo">BeFinner</Logo>
             <Toggle 
             styles={styles ? true : false}
             onClick={() => setStyles(!styles)}
@@ -37,7 +37,7 @@ const Headers = styled.header `
     left: 0;
     width: 100%;
     padding: 20px 50px;
-    z-index: 10;
+    z-index: 1000;
     box-sizing: border-box;
 `
 

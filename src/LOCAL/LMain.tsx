@@ -1,15 +1,56 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components'
 
+
+import { gsap } from 'gsap'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+
 const LMain:React.FC = () => {
+
+
+    const revealRefs = useRef([]);
+  revealRefs.current = []
+
+   useEffect(() => {
+
+    revealRefs.current.forEach((el) => {
+      gsap.fromTo(el, {
+        autoAlpha: 0
+      }, {
+          duration: 1,
+            autoAlpha: 1,
+            ease: 'none',
+            delay :2,
+            scrollTrigger: {
+                id: `WrapTextDiv`,
+                trigger: el,
+                start: 'top center+=200',
+                toggleActions: 'play none none reverse',
+                // markers: true
+            }
+        });
+    });
+    console.log("on");
+  }, [])
+    
+  const addToRefs = (el: never) => {
+    if(el && !revealRefs.current.includes(el)){
+      revealRefs.current.push(el)
+    }
+  };
     return (
     <WrapTextDiv>
             <H2TextDiv>
-            <H2Text>Local Cafe</H2Text>
+            <H2Text ref={addToRefs}>Local Cafe</H2Text>
             </H2TextDiv>
         <TextDiv>
-            <LocalTitleText>地元民のみぞ知る憩いの場</LocalTitleText>
-            <LocalText>
+            <LocalTitleText ref={addToRefs}>地元民のみぞ知る憩いの場</LocalTitleText>
+            <LocalText ref={addToRefs}>
                 普段からお店の入れ替わりが激しい駅前とは違い,<br />
                 材木座近辺では地元に根強いたカフェが人知れず<br />
                 オープンしています。地元以外の人は入りづらいのではと<br />

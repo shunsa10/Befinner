@@ -143,7 +143,7 @@ position: relative;
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(10px);
-    z-index: 100;
+    z-index: 10;
     box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
     width: 26rem;
     height: 10rem;

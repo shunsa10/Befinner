@@ -12,12 +12,15 @@ import Local from './LOCAL/Local'
 import {StyleProvider} from './context/StyleContext';
 import {AccountProvider} from './context/AccountContext'
 import {ReviewProvider} from './context/ReviewCotext'
+import {AuthProvider} from './context/AuthContext'
+import LoggedInRoute from './components/LoggedInRoute'
 
 
 const App:React.FC = () => {
     // const location = useLocation();
     // const [_, rootPath] = location.pathname.split("/");
     return (
+    <AuthProvider>
         <AccountProvider>
         <StyleProvider>
         <ReviewProvider>
@@ -27,7 +30,9 @@ const App:React.FC = () => {
                         <Home />
                     </Route>
                     <Route exact path='/About' component={About}>
+                    <LoggedInRoute>
                         <About />
+                    </LoggedInRoute>
                     </Route>
                     <Route exact path='/Todo' component={Todo}>
                         <Todo />
@@ -43,6 +48,7 @@ const App:React.FC = () => {
         </ReviewProvider>
         </StyleProvider>
         </AccountProvider>
+    </AuthProvider>
        
     );
 };
