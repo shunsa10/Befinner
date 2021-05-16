@@ -14,7 +14,6 @@ type AccountProps = {
 const Account:React.FC = () => {
 const [account] = useContext(AccountContext);
     return (
-      
       <SectionAC account={account ? true : false}>
         <Container>
           <Signin />

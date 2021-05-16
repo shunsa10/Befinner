@@ -8,6 +8,7 @@ import {useContext} from 'react'
 import {AccountContext} from '../context/AccountContext'
 import {useHistory} from 'react-router-dom'
 import {auth} from '../firebase/config'
+import { AccountHooks } from "./Hooks/AccountHooks";
 
 
 const useStyles = makeStyles({
@@ -43,23 +44,25 @@ const Signin:React.FC = () => {
      const history = useHistory();
      const classes = useStyles();
      const [account, setAccount] = useContext(AccountContext);
-     const [email, setEmail] = useState('');
-     const [password, setPassword] = useState('');
-
+    const email = AccountHooks('');
+    const password = AccountHooks('');
+  const [judge, setJudge] = useState("自分用のアカウントを作成しますか？");
      const [isSigninSuccess, setIsSigninSuccess] = useState(false);
 
      const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        auth.signInWithEmailAndPassword(email, password)
+        auth.signInWithEmailAndPassword(email.value, password.value)
 
         .then(() => {
             console.log("成功");
             setIsSigninSuccess(true) 
             // history.push('/About');
+
         })
 
         .catch((error) => {
             console.log('失敗', error);
+            setJudge('ログインに失敗しました。');
         });
      };
      //レンダリングから逃れるための遅延
@@ -76,32 +79,32 @@ const Signin:React.FC = () => {
           <SigninForm onSubmit={handleSubmit}>
             <SigninH2>Sign In</SigninH2>
             <TextField
+              {...email}
               className={classes.Input}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               fullWidth
               label="メールアドレス"
               variant="outlined"
             />
             <TextField
+              {...password}
               className={classes.Input}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
               fullWidth
               label="パスワード"
               variant="outlined"
             />
-              <Button
-                type="submit"
-                className={classes.Submit}
-                variant="contained">
-                Login
-              </Button>
+            <Button
+              type="submit"
+              className={classes.Submit}
+              variant="contained"
+            >
+              Login
+            </Button>
             <SigninP>
-              自分用のアカウントを作成しますか？
+              {judge}
               <SigninA
                 account={account ? true : false}
-                onClick={() => setAccount(!account)}>
+                onClick={() => setAccount(!account)}
+              >
                 Sign Up
               </SigninA>
             </SigninP>

@@ -10,13 +10,12 @@ const Main:React.FC = () => {
         <TextDiv>
             <AboutTitleText>ABOUT</AboutTitleText>
             <AboutText>
-                ccccccccccccccccccccccccccc<br />
-                ccccccccccccccccccccccccccc<br />
-                ccccccccccccccccccccccccccc<br />
-                ccccccccccccccccccccccccccc<br />
-                ccccccccccccccccccccccccccc<br />
-                ccccccccccccccccccccccccccc<br />
-
+                2020.6月以降アウトドアの趣味に火が付き<br />
+                サーフィンの世界も人気が出てきました。<br />
+                初めてサーフィンを始める人がいる中、聞き<br />
+                慣れない単語が多いのでなるべく、ビギナーにも<br />
+                わかりやすいようなサイトにしました。<br />
+                サーフィンをする第一歩に慣ればと思います。<br />
             </AboutText>
         </TextDiv>
         </>
@@ -51,20 +50,27 @@ const TextDiv = styled.div `
    margin-top: 200px;
    border-radius: .5rem;
 `
-const AboutTitleText = styled.h2 `
-color: white;
-font-weight: lighter;
-font-size: 3rem;
-margin: 0 auto;
-opacity: .5;
+const AboutTitleText = styled.h2`
+  content: "data-en";
+  font-family: scriptorama-markdown-jf, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 3.5rem;
+  letter-spacing: 5px;
+  margin: 0 auto;
+  opacity: 0.8;
+`;
 
-`
-
-const AboutText = styled.p `
-margin: 0 auto;
-display: flex;
-justify-content: center;
-color: #fff;
-opacity: .7;
-
-`
+const AboutText = styled.p`
+  content: attr(data-en);
+  font-family: a-otf-ryumin-pr6n, serif;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  opacity: 0.7;
+`;

@@ -7,6 +7,8 @@ import {AccountContext} from '../context/AccountContext'
 import {useState} from 'react'
 import { auth } from "../firebase/config";
 import {useHistory} from 'react-router-dom'
+import {AccountHooks} from './Hooks/AccountHooks'
+
 
 
 const useStyles = makeStyles({
@@ -43,19 +45,20 @@ const Signup:React.FC = () => {
     const history = useHistory();
     const classes = useStyles();
     const [account, setAccount] = useContext(AccountContext);
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const username = AccountHooks('');
+    const email = AccountHooks('');
+    const password = AccountHooks('');
+    const [judgeF, setJudgeF] = useState("既存のアカウントを持っていますか？");
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         // ChangeEvent<HTMLInputElement> オーバーロードした
         //eventの型定義問題
         e.preventDefault();
-        auth.createUserWithEmailAndPassword(email, password)
+        auth.createUserWithEmailAndPassword(email.value, password.value)
             //非同期処理成功時に実行
             .then((userCredential) => {
                 if (userCredential.user === null)return; 
                 //userがnullだったらリターンは返さない
-               userCredential.user.updateProfile({ displayName: username })
+               userCredential.user.updateProfile({ displayName: username.value })
                //コンパイルエラーが出て（？）をつけると解消される
                 .then(() =>{
                     console.log('成功', userCredential);
@@ -64,6 +67,7 @@ const Signup:React.FC = () => {
             })
             .catch((error) =>{
                 console.log('失敗', error);
+                setJudgeF('Sigupできませんでした。');
                 
             })
         
@@ -74,20 +78,17 @@ const Signup:React.FC = () => {
                   <SignupForm onSubmit={handleSubmit}>
                     <SignupH2>Create an Account</SignupH2>
                         <TextField className={classes.Input} 
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        {...username}
                         fullWidth label='ユーザー名'
                         variant='standard'
                         />
                         <TextField className={classes.Input} 
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        {...email}
                         fullWidth label='メールアドレス'
                         variant='outlined'
                         />
                         <TextField className={classes.Input} 
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        {...password}
                         fullWidth label='パスワード'
                         variant='outlined'
                         />
@@ -95,7 +96,8 @@ const Signup:React.FC = () => {
                         type='submit'
                         variant='contained'
                         >Logup</Button>
-                    <SignupP>既存のアカウントを持っていますか？
+                    <SignupP>
+                        {judgeF}
                         <SignupA
                         account={account ? true : false}
                         onClick={() => setAccount(!account)}

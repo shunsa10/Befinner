@@ -16,22 +16,55 @@ const AProfile: React.FC = () => {
             <MyName>Shun Sato</MyName>
             <MyBday>H10 1998.12.8</MyBday>
             <MyPro>
-              えええええええええええええええええええええ
+              2020.12月まで都内のホテルでメインキッチン
               <br />
-              えええええええええええええええええええええ
+              のガルニチュールを２年目ながら担当。
               <br />
-              gっっっっっっっっっっっっっっっっっっっっg
+              専門学生時代には東京代表として全国技術コンクール
               <br />
-              gっっっっっっっっっっっっっっっっっっっっg
+              に出場した。現在はSEとして自社開発企業を目指し
+              <br />
+              日々努力を積み重ねている。
+              <br />
+              趣味としてサーフィンやvlog制作をしている。
               <br />
             </MyPro>
           </ProText>
         </ProfilDiv>
 
-        <HistoryDiv>
-          <HistoryImg src="./img/imgHis.jpg" />
+        <ValuesDiv>
+          <ValuesImg src="./img/imgHis.jpg" />
           <ProBlur></ProBlur>
-        </HistoryDiv>
+          <ValuesTextDiv>
+            <MyValues>My Values top10</MyValues>
+            <ValuesUl>
+              <ValuesLi>1.成長　精神、スキルで成長する　</ValuesLi>
+              <ValuesP>　=&gt; 成長することでさらに次のステージへ進める</ValuesP>
+              <ValuesLi>2.達成　重要なことを達成する</ValuesLi>
+              <ValuesP>　=&gt; 自分の存在を周りに認めさせる</ValuesP>
+              <ValuesLi>3.性愛　満足の育成生活を送る</ValuesLi>
+              <ValuesP>　=&gt; sexは愛情表現の最上位互換。</ValuesP>
+              <ValuesLi>4.興奮　スリルと刺激を持つ</ValuesLi>
+              <ValuesP>　=&gt;
+                リスク上等、追い込まれた状態でこそ人は成長できる
+              </ValuesP>
+              <ValuesLi>5.情熱　何らかの情熱を持つ</ValuesLi>
+              <ValuesP>　=&gt;
+                心の底から熱を持てることはきっと人生で何回もない
+              </ValuesP>
+              <ValuesLi>6.友情　親密な友人を持つ</ValuesLi>
+              <ValuesP>　=&gt; 楽しいことは友人と共有したい</ValuesP>
+              <ValuesLi>7.恋愛　燃えるような恋をする</ValuesLi>
+              <ValuesP>　=&gt; 好きな人のための行動は特別な意味を持つ</ValuesP>
+              <ValuesLi>8.魅力　身体的な魅力を持つ</ValuesLi>
+              <ValuesP>　=&gt; 自分への自信や生活の原動力になる</ValuesP>
+              <ValuesLi>9.想像　斬新なアイデアを持つ</ValuesLi>
+              <ValuesP>　=&gt; 温故知新、新しいものは人生の刺激</ValuesP>
+              <ValuesLi>10.開放　新しい体験をする</ValuesLi>
+              <ValuesP>　=&gt; その経験から人生が生まれる</ValuesP>
+            </ValuesUl>
+          </ValuesTextDiv>
+        </ValuesDiv>
 
         <YouTubeDiv>
           <ImgBxY>
@@ -224,21 +257,43 @@ const MyBday = styled.h5`
 `;
 const MyPro = styled.p`
   color: white;
-  font-size: 1.4rem;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  opacity: 0.9;
   text-align: center;
   font-family: serif;
   z-index: 20;
   margin: 0;
 `;
 ///////////////////////////////////////////////////////
-const HistoryDiv = styled.div`
+const ValuesDiv = styled.div`
   position: relative;
   width: 35rem;
   height: 24rem;
   margin-bottom: 1.5rem;
   overflow: hidden;
-  background-color: antiquewhite;
+  background-color: #0c0b0b;
   border-radius: 0.7rem;
+
+  overflow-y: scroll;
+  scroll-snap-type: y;
+  transform: translateZ(0);
+  
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #575757;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #272727;
+    border: none;
+    border-radius: 10px;
+  }
 `;
 const ProBlur = styled.div`
   position: absolute;
@@ -248,7 +303,7 @@ const ProBlur = styled.div`
   left: 0;
   bottom: 0;
 `;
-const HistoryImg = styled.img`
+const ValuesImg = styled.img`
   position: absolute;
   top: 0;
   left: 0;
@@ -256,6 +311,47 @@ const HistoryImg = styled.img`
   height: 100%;
   object-fit: cover;
   border-radius: 0.7rem;
+`;
+const ValuesTextDiv = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  
+`;
+
+const MyValues = styled.h3`
+  content: "data-en";
+  font-family: scriptorama-markdown-jf, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+`;
+
+const ValuesUl = styled.ul`
+color: #fff;
+list-style: none;
+margin: 0 ;
+padding: 0 3rem;
+`;
+const ValuesLi = styled.li`
+  content: attr(data-en);
+  font-family: a-otf-ryumin-pr6n, serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 1.2rem;
+`;
+const ValuesP = styled.p`
+  content: attr(data-en);
+  font-family: a-otf-ryumin-pr6n, serif;
+  font-weight: 600;
+  font-style: normal;
+  margin-top: 2px;
+  margin-bottom: 1.2rem;
 `;
 
 ///////////////////////////////////////////////////////////

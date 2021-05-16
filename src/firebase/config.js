@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
-//firebaseの認証機能を使います
+//firebaseの認証機能を使う
 import 'firebase/auth';
-//firebaseのfirestoreを使います
+//firebaseのfirestoreを使う
 import 'firebase/firestore';
 
 var firebaseConfig = {

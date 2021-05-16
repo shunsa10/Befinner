@@ -30,7 +30,7 @@ export let AuthProvider: FC = ({ children }) => {
   }, []);
 
   const bool: [boolean, (account: boolean) => void] = [false, () => {}];
-  const state: [boolean, (account: boolean) => void] = bool;
+  // const state: [boolean, (account: boolean) => void] = bool;
 
   return <AuthContext.Provider value={user}>{children}</AuthContext.Provider>;
 };

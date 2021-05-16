@@ -9,8 +9,8 @@ type ToggleProps = {
 }
 
 const Title:React.FC = () => {
-    console.log(process.env.REACT_APP_PUBLIC_URL);
-    console.log(window.location.origin);
+    // console.log(process.env.REACT_APP_PUBLIC_URL);
+    // console.log(window.location.origin);
     const [styles] =useContext(StyleContext);
     return (
         <>
