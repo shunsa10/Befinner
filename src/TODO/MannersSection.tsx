@@ -1,19 +1,59 @@
-import React from 'react'
+import React, { useRef, useEffect } from "react";
 import styled from 'styled-components'
 // import { pc, sp, tab } from '../media';
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+
 
 const MannersSection:React.FC = () => {
+
+    const revealRefs = useRef([]);
+    revealRefs.current = [];
+
+    useEffect(() => {
+      revealRefs.current.forEach((el) => {
+        gsap.fromTo(
+          el,
+          {
+            autoAlpha: 0,
+          },
+          {
+            duration: 2,
+            autoAlpha: 1,
+            ease: "none",
+            scrollTrigger: {
+              id: `TextDiv2`,
+              trigger: el,
+              start: "top center+=100",
+              toggleActions: "play none none reverse",
+              // markers: true
+            },
+          }
+        );
+      });
+      console.log("on");
+    }, []);
+
+    const addToRefs = (el: never) => {
+      if (el && !revealRefs.current.includes(el)) {
+        revealRefs.current.push(el);
+      }
+    };
     return (
-            <MannersWrap>
-               <MannersDiv>
-                   <MannersImg></MannersImg>
-                    <MannersTextDiv>
-                        <MannersTextH2></MannersTextH2>
-                        <MannersTextP></MannersTextP>
-                    </MannersTextDiv>
-               </MannersDiv>
-           </MannersWrap>
+      <MannersWrap>
+        <MannersDiv>
+          <MannersImg ref={addToRefs}></MannersImg>
+          <MannersTextDiv ref={addToRefs}>
+            <MannersTextH2></MannersTextH2>
+            <MannersTextP></MannersTextP>
+          </MannersTextDiv>
+        </MannersDiv>
+      </MannersWrap>
     );
 };
 

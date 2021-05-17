@@ -1,39 +1,87 @@
-import React from 'react'
+import React, { useRef, useEffect } from "react";
 import styled from 'styled-components'
+
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// import {useTest} from './TodoHooks/test'
 // import { pc, sp, tab } from '../media';
 
+
+gsap.registerPlugin(ScrollTrigger);
+
+
 const ChoiceSection:React.FC = () => {
+
+    const revealRefs = useRef([]);
+    revealRefs.current = [];
+
+    useEffect(() => {
+      revealRefs.current.forEach((el) => {
+        gsap.fromTo(
+          el,
+          {
+            autoAlpha: 0,
+          },
+          {
+            duration: 2,
+            autoAlpha: 1,
+            ease: "none",
+            scrollTrigger: {
+              id: `TextDiv2`,
+              trigger: el,
+              start: "top center+=100",
+              toggleActions: "play none none reverse",
+              // markers: true
+            },
+          }
+        );
+      });
+      console.log("on");
+    }, []);
+
+    const addToRefs = (el: never) => {
+      if (el && !revealRefs.current.includes(el)) {
+        revealRefs.current.push(el);
+      }
+    };
     return (
       <ChoiceWrap>
         <TodosT>
-          <TodosTH2>
+          <TodosTH2 ref={addToRefs}>
             Before everything else, getting ready is the secret of success.
           </TodosTH2>
         </TodosT>
         <ChoiceDiv>
-          <ChoiceImg></ChoiceImg>
+          <ChoiceImg ref={addToRefs}></ChoiceImg>
           <ChoiceTextDiv>
-            <ChoiceTextH2>01 ボードの選び方</ChoiceTextH2>
-            <ChoiceTextP>
+            <ChoiceTextH2 ref={addToRefs}>01 ボードの選び方</ChoiceTextH2>
+            <ChoiceTextP ref={addToRefs}>
               まず肝心なのは浮力。十分な浮力がないと波に乗るハードルが一気に
               跳ね上がる。
+              <br />
+              <br />
               <Span>
                 7f以上で全体的に幅広があり、ボードの反りが少なく厚さがあるものがベストです。
               </Span>
+              <br />
               かなり要約しましたがここまで店員さんに話せればあなたにベストな相棒を選んでくれます。
+              <br />
               <br />
               これで楽しめるのですが、安定感に全振してるので操作性や派手な技をしたい方は２本目
               を買いましょう。
               <br />
-              最初から攻めたボードで上達せず辞めた人はかなりいます。
+              攻めたボードで上達せず辞めた人はかなりいます。
             </ChoiceTextP>
           </ChoiceTextDiv>
         </ChoiceDiv>
         <ChoiceDivS>
-          <ChoiceImgS></ChoiceImgS>
+          <ChoiceImgS ref={addToRefs}></ChoiceImgS>
           <ChoiceTextDivS>
-            <ChoiceTextH2S>02 波のコンディション</ChoiceTextH2S>
-            <ChoiceTextPS></ChoiceTextPS>
+            <ChoiceTextH2S ref={addToRefs}>02 波のコンディション</ChoiceTextH2S>
+            <ChoiceTextPS>
+            </ChoiceTextPS>
           </ChoiceTextDivS>
         </ChoiceDivS>
       </ChoiceWrap>
@@ -104,8 +152,8 @@ position: relative;
     z-index: 1;
     box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, .3);
-    width: 26rem;
-    height: 20rem;
+    width: 28rem;
+    height: 23rem;
    margin: 0 auto;
    padding: 5px 10px;
    border-radius: .5rem;
@@ -126,6 +174,7 @@ line-height: 1.6rem;
 
 const Span = styled.span `
 font-weight: bold;
+margin: 5px 0;
 `
 
 ///////////////////////////////////////////

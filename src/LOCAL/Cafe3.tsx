@@ -36,7 +36,7 @@ const Cafe3:React.FC = () => {
             }
         });
     });
-    console.log("on");
+   
   }, [])
     
   const addToRefs = (el: never) => {

@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 import styled from 'styled-components'
 // import { pc, sp, tab } from '../media';
 
-
 const GadgetSection:React.FC = () => {
+
     return (
         <GadgetWrap>
             <GadgetConteiner>

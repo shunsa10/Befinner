@@ -1,19 +1,58 @@
-import React from 'react'
+import React, { useRef, useEffect } from "react";
 import styled from 'styled-components'
 // import { pc, sp, tab } from '../media';
 
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+
 const ConditionSection:React.FC = () => {
+
+    const revealRefs = useRef([]);
+    revealRefs.current = [];
+
+    useEffect(() => {
+      revealRefs.current.forEach((el) => {
+        gsap.fromTo(
+          el,
+          {
+            autoAlpha: 0,
+          },
+          {
+            duration: 2,
+            autoAlpha: 1,
+            ease: "none",
+            scrollTrigger: {
+              id: `TextDiv2`,
+              trigger: el,
+              start: "top center+=100",
+              toggleActions: "play none none reverse",
+              // markers: true
+            },
+          }
+        );
+      });
+      console.log("on");
+    }, []);
+
+    const addToRefs = (el: never) => {
+      if (el && !revealRefs.current.includes(el)) {
+        revealRefs.current.push(el);
+      }
+    };
     return (
-           <ConditionWrap>
-               <ConditionDiv>
-                   <ConditionImg></ConditionImg>
-                    <ConditionTextDiv>
-                        <ConditionTextH2></ConditionTextH2>
-                        <ConditionTextP></ConditionTextP>
-                    </ConditionTextDiv>
-               </ConditionDiv>
-           </ConditionWrap>
+      <ConditionWrap>
+        <ConditionDiv>
+          <ConditionImg ref={addToRefs}></ConditionImg>
+          <ConditionTextDiv ref={addToRefs}>
+            <ConditionTextH2></ConditionTextH2>
+            <ConditionTextP></ConditionTextP>
+          </ConditionTextDiv>
+        </ConditionDiv>
+      </ConditionWrap>
     );
 };
 

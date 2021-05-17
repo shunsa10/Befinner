@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 //Signin ,upコンポーネントからアカウント周りのロジックを抽出
-export const AccountHooks = (initaValue: string) => {
+export const useAccountHooks = (initaValue: string) => {
   const [value, setValue] = useState(initaValue);
   return {
     value,

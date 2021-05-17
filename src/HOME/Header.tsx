@@ -2,6 +2,7 @@ import React from 'react';
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
+import { pc, sp, tab } from "../media";
 
 
 
@@ -28,17 +29,20 @@ const Header:React.FC = () => {
 export default Header;
 
 
-const Headers = styled.header `
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 50px;
-    z-index: 10;
-    box-sizing: border-box;
-`
+const Headers = styled.header`
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  z-index: 10;
+  box-sizing: border-box;
+  ${tab`
+  padding: 20px;
+`}
+`;
 
 const Logo = styled.a `
     position: relative;

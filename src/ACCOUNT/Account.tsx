@@ -1,9 +1,8 @@
 import React from 'react';
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
-
+import { pc, sp, tab } from "../media";
 import {AccountContext} from '../context/AccountContext'
-
 import Signin from './Signin'
 import Signup from './Signup'
 
@@ -50,13 +49,16 @@ const SectionAC = styled.section<AccountProps> `
     ` : ''}
 
 `
-const Container = styled.div `
-position: relative;
-    width: 800px;
-    height: 500px;
-    background: #fff;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
-    overflow: hidden;
-`
+const Container = styled.div`
+  position: relative;
+  width: 800px;
+  height: 500px;
+  background: #fff;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  ${tab`
+  max-width: 400px;
+`}
+`;
 
 ///////////////////////////////////////////////

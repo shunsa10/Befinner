@@ -8,8 +8,8 @@ import {useContext} from 'react'
 import {AccountContext} from '../context/AccountContext'
 import {useHistory} from 'react-router-dom'
 import {auth} from '../firebase/config'
-import { AccountHooks } from "./Hooks/AccountHooks";
-
+import { useAccountHooks } from "./Hooks/AccountHooks";
+import { pc, sp, tab } from "../media";
 
 const useStyles = makeStyles({
   Input: {
@@ -44,8 +44,8 @@ const Signin:React.FC = () => {
      const history = useHistory();
      const classes = useStyles();
      const [account, setAccount] = useContext(AccountContext);
-    const email = AccountHooks('');
-    const password = AccountHooks('');
+    const email = useAccountHooks('');
+    const password = useAccountHooks('');
   const [judge, setJudge] = useState("自分用のアカウントを作成しますか？");
      const [isSigninSuccess, setIsSigninSuccess] = useState(false);
 
@@ -125,44 +125,66 @@ position: absolute;
     display: flex;
 
 `
-const SigninImgDiv = styled.div<AccountProps> `
-position: relative;
-    width: 50%;
-    height: 100%;
-    background: cadetblue;
-    transition: 0.5s;
-    left: 0%;
-    ${({account}) => account ? css `
-        left: -100%;
-    ` : ''}
-`
+const SigninImgDiv = styled.div<AccountProps>`
+  position: relative;
+  width: 50%;
+  height: 100%;
+  transition: 0.5s;
+  left: 0%;
+  ${tab`
+  display: none;
+`}
+  ${sp`
+  display: none;
+`}
+  ${({ account }) =>
+    account
+      ? css`
+          left: -100%;
+        `
+      : ""}
+`;
 
-const SigninImgBxAC = styled.img `
-position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-`
+const SigninImgBxAC = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  ${tab`
+  display: none;
+`}
+  ${sp`
+  display: none;
+`}
+`;
 //formをかこうdiv
-const SigninInfoAC = styled.div<AccountProps> `
-position: relative;
-    width: 50%;
-    height: 100%;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    transition: 0.5s;
-    top: -2rem;
-    left: 0;
-    ${({account}) => account ? css `
-        left: 100%;
-    ` : ''}
-
-`
+const SigninInfoAC = styled.div<AccountProps>`
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  transition: 0.5s;
+  top: -2rem;
+  left: 0;
+  ${tab`
+  width: 100%;
+`}
+  ${sp`
+  width: 80%;
+`}
+  ${({ account }) =>
+    account
+      ? css`
+          left: 100%;
+        `
+      : ""}
+`;
 const SigninForm = styled.form `
 position: relative;
     width: 80%;

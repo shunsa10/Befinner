@@ -7,8 +7,8 @@ import {AccountContext} from '../context/AccountContext'
 import {useState} from 'react'
 import { auth } from "../firebase/config";
 import {useHistory} from 'react-router-dom'
-import {AccountHooks} from './Hooks/AccountHooks'
-
+import {useAccountHooks} from './Hooks/AccountHooks'
+import { pc, sp, tab } from "../media";
 
 
 const useStyles = makeStyles({
@@ -45,9 +45,9 @@ const Signup:React.FC = () => {
     const history = useHistory();
     const classes = useStyles();
     const [account, setAccount] = useContext(AccountContext);
-    const username = AccountHooks('');
-    const email = AccountHooks('');
-    const password = AccountHooks('');
+    const username = useAccountHooks('');
+    const email = useAccountHooks('');
+    const password = useAccountHooks('');
     const [judgeF, setJudgeF] = useState("既存のアカウントを持っていますか？");
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
         // ChangeEvent<HTMLInputElement> オーバーロードした
@@ -125,43 +125,64 @@ position: absolute;
     ` : ''}
 
 `
-const SignupInfoAC = styled.div<AccountProps> `
-position: relative;
-    width: 50%;
-    height: 100%;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    transition: 0.5s;
-    top: -2rem;
-    left: 100%;
-    ${({account}) => account ? css `
-        left: 0;
-    ` : ''}
-
-`
-const SignupImgDiv = styled.div<AccountProps> `
-position: relative;
-    width: 50%;
-    height: 100%;
-    background: #5fa064;
-    transition: 0.5s;
-    left: -100%;
-    ${({account}) => account ? css `
-        left: 0;
-    ` : ''}
-
-`
-const SignupImgBxAC = styled.img `
-position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-`
+const SignupInfoAC = styled.div<AccountProps>`
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  transition: 0.5s;
+  top: -2rem;
+  left: 100%;
+  ${tab`
+  width: 100%;
+`}
+  ${sp`
+  width: 100%;
+`}
+  ${({ account }) =>
+    account
+      ? css`
+          left: 0;
+        `
+      : ""}
+`;
+const SignupImgDiv = styled.div<AccountProps>`
+  position: relative;
+  width: 50%;
+  height: 100%;
+  transition: 0.5s;
+  left: -100%;
+  ${tab`
+  display: none;
+`}
+  ${sp`
+  display: none;
+`}
+  ${({ account }) =>
+    account
+      ? css`
+          left: 0;
+        `
+      : ""}
+`;
+const SignupImgBxAC = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  ${tab`
+  display: none;
+`}
+  ${sp`
+  display: none;
+`}
+`;
 const SignupForm = styled.form `
 position: relative;
     width: 80%;

@@ -1,24 +1,73 @@
 import React from 'react';
 import styled from 'styled-components'
+import {useRef, useEffect} from 'react'
+
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 
 
 const Main:React.FC = () => {
+
+    const revealRefs = useRef([]);
+    revealRefs.current = [];
+
+    useEffect(() => {
+      revealRefs.current.forEach((el) => {
+        gsap.fromTo(
+          el,
+          {
+            autoAlpha: 0,
+          },
+          {
+            duration: 2,
+            autoAlpha: 1,
+            ease: "none",
+            scrollTrigger: {
+              id: `TextDiv3`,
+              trigger: el,
+              start: "top center+=500",
+              toggleActions: "play none none reverse",
+              // markers: true
+            },
+          }
+        );
+      });
+      console.log("on");
+    }, []);
+
+    const addToRefs = (el: never) => {
+      if (el && !revealRefs.current.includes(el)) {
+        revealRefs.current.push(el);
+      }
+    };
+
+
     return (
-        <>
-        <Img src={'./img/img1.jpg'} alt="" /> 
-        <TextDiv>
-            <AboutTitleText>ABOUT</AboutTitleText>
-            <AboutText>
-                2020.6月以降アウトドアの趣味に火が付き<br />
-                サーフィンの世界も人気が出てきました。<br />
-                初めてサーフィンを始める人がいる中、聞き<br />
-                慣れない単語が多いのでなるべく、ビギナーにも<br />
-                わかりやすいようなサイトにしました。<br />
-                サーフィンをする第一歩に慣ればと思います。<br />
-            </AboutText>
+      <>
+        <Img src={"./img/img1.jpg"} alt="" />
+        <TextDiv ref={addToRefs}>
+          <AboutTitleText>ABOUT</AboutTitleText>
+          <AboutText>
+            2020.6月以降アウトドアの趣味に火が付き
+            <br />
+            サーフィンの世界も人気が出てきました。
+            <br />
+            初めてサーフィンを始める人がいる中、聞き
+            <br />
+            慣れない単語が多いのでなるべく、ビギナーにも
+            <br />
+            わかりやすいようなサイトにしました。
+            <br />
+            サーフィンをする第一歩に慣ればと思います。
+            <br />
+          </AboutText>
         </TextDiv>
-        </>
+      </>
     );
 };
 
