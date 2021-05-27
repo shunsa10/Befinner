@@ -46,38 +46,44 @@ console.log("on");
 
 
     return (
-        <>
-    <ContentDiv>
-      <TitleTextDiv>
-
-        <TextDiv1 ref={addToRefs}> 
-            <BannerH2 ref={addToRefs}>
-                EAT Healthy<br />
-                Stay Healthy
-            </BannerH2>
-                <BannerP ref={addToRefs}>
-                     This is really nice Sorry to distrub, I made this website but sir<br />
-                     Facebook, Instagram and twitter.symbol is so <br />
-                     long.... Please help mePlease provide solution <br />
-                </BannerP>
-                <BannerA>READ NORE</BannerA>
-                <Icons>
-                    <IconsUl>
-                        <IconsLi><IconsA><IconsImg src={'./img/instagram.svg'} /></IconsA></IconsLi>
-                        <IconsLi><IconsA><IconsImg src={'./img/instagram.svg'} /></IconsA></IconsLi>
-                    </IconsUl>
-                </Icons>
-        </TextDiv1>
-
+      <>
+        <ContentDiv>
+          <TitleTextDiv>
+            <TextDiv1 ref={addToRefs}>
+              <BannerH2 ref={addToRefs}>
+                GELATERIA
+                <br />
+                SANTI
+              </BannerH2>
+              <BannerP ref={addToRefs}>
+                駅から海にかけて伸びる御成通りは鎌倉の古い商店街です。
+                <br />
+                その脇道にポツンとあるのがアイスクリーム専門店SANTI。 <br />
+                見慣れない名前のアイスが14種類ほどあり、すべてお店の <br />
+                アイスマシーンで作られます。
+                <br />
+                私のおすすめはローズマリーハニーで、蜂蜜の甘さとロー
+                <br />
+                ズマリーの風味がベストマッチしています。
+              </BannerP>
+              <BannerA href="https://gelateriasanti.com/">READ NORE</BannerA>
+              <Icons>
+                <IconsUl>
+                  <IconsLi>
+                    <IconsA href="https://www.instagram.com/gelateriasanti/?hl=ja">
+                      <IconsImg src={"./img/instagram.svg"} />
+                    </IconsA>
+                  </IconsLi>
+                </IconsUl>
+              </Icons>
+            </TextDiv1>
             <BannerImgDiv1 ref={addToRefs}>
-                <BannerImg1 src={'./img/IMG_6386.png'} />  ////
+              <BannerImg1 src={"./img/IMG_6386.png"} /> ////
             </BannerImgDiv1>
-
-
-      </TitleTextDiv>
-    </ContentDiv>
-        </>
-    )
+          </TitleTextDiv>
+        </ContentDiv>
+      </>
+    );
 }
 
 export default Cafe1;

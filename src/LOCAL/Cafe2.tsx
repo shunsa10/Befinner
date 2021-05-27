@@ -46,37 +46,43 @@ const Cafe2:React.FC = () => {
   };
 
     return (
-        <>
-    <ContentDiv>
-      <TitleTextDiv>
+      <>
+        <ContentDiv>
+          <TitleTextDiv>
+            <BannerImgDiv2 ref={addToRefs}>
+              <BannerImg2 src={"./img/IMG_4334.png"} /> ////
+            </BannerImgDiv2>
 
-        <BannerImgDiv2 ref={addToRefs}>
-                <BannerImg2 src={'./img/IMG_4334.png'} />  ////
-        </BannerImgDiv2>
-
-        <TextDiv2 ref={addToRefs}> 
-            <BannerH2 ref={addToRefs}>
-                EAT Healthy<br />
-                Stay Healthy
-            </BannerH2>
-                <BannerP ref={addToRefs}>
-                     This is really nice Sorry to distrub, I made this website but sir<br />
-                     Facebook, Instagram and twitter.symbol is so <br />
-                     long.... Please help mePlease provide solution <br />
-                </BannerP>
-                <BannerA >READ NORE</BannerA>
-                <Icons >
-                    <IconsUl>
-                        <IconsLi><IconsA><IconsImg src={'./img/instagram.svg'} /></IconsA></IconsLi>
-                        <IconsLi><IconsA><IconsImg src={'./img/instagram.svg'} /></IconsA></IconsLi>
-                    </IconsUl>
-                </Icons>
-        </TextDiv2>
-
-     </TitleTextDiv>
-   </ContentDiv>
-        </>
-    )
+            <TextDiv2 ref={addToRefs}>
+              <BannerH2 ref={addToRefs}>
+                MILL COFFEE
+                <br />& STAND
+              </BannerH2>
+              <BannerP ref={addToRefs}>
+               お店が空いている日は、常にお客さんがいるような多くの人に
+                <br />
+                愛されているコーヒショップ。オリジナルブレンドのコーヒー <br />
+                で店内は香ばしい香りで充満している。特にキャロットケーキ
+                <br />
+                は香辛料とアイシングクリームの相性が抜群です。
+              </BannerP>
+              <BannerA href="https://hanako.tokyo/news/magazine/89316/">
+                READ NORE
+              </BannerA>
+              <Icons>
+                <IconsUl>
+                  <IconsLi>
+                    <IconsA href="https://www.instagram.com/millcoffeestand/?hl=ja">
+                      <IconsImg src={"./img/instagram.svg"} />
+                    </IconsA>
+                  </IconsLi>
+                </IconsUl>
+              </Icons>
+            </TextDiv2>
+          </TitleTextDiv>
+        </ContentDiv>
+      </>
+    );
 }
 
 export default Cafe2;

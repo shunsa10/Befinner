@@ -46,8 +46,26 @@ const DangerSection:React.FC = () => {
       <DangerWrap>
         <DangerDiv>
           <DangerTextDiv ref={addToRefs}>
-            <DangerTextH2></DangerTextH2>
-            <DangerTextP></DangerTextP>
+            <DangerTextH2>04 危険な場所</DangerTextH2>
+            <DangerTextP>
+              <Span>
+                海底が岩場になっているところは波が立ちやすく、人気のスポ
+                <br />
+                ットの一つ
+              </Span>
+              ですが、初心者の型にはおすすめできません。波に
+              <br />
+              飲まれて海底に叩きつけられれば大怪我です。
+              <br />
+              <br />
+              もし岩場ですることがあれば深いところを選びましょう。岩場
+              <br />
+              のようなところにいる人は比較的その土地に慣れている人が多
+              <br />
+              い印象があるのでコミュニケーションをとって安全を確保しま
+              <br />
+              しょう。
+            </DangerTextP>
           </DangerTextDiv>
           <DangerImg ref={addToRefs}></DangerImg>
         </DangerDiv>
@@ -109,10 +127,24 @@ position: relative;
    border-radius: .5rem;
 `
 
-const DangerTextH2 = styled.h2 `
+const DangerTextH2 = styled.h2`
+  font-family: ta-kai-regular, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem;
+  padding-left: 5px;
+`;
 
-`
+const DangerTextP = styled.p`
+  padding: 5px;
+  padding-bottom: 10px;
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.6rem;
+`;
 
-const DangerTextP = styled.p `
-
-`
+const Span = styled.span`
+  font-weight: bold;
+  margin: 5px 0;
+`; 

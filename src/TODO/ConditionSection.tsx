@@ -48,8 +48,25 @@ const ConditionSection:React.FC = () => {
         <ConditionDiv>
           <ConditionImg ref={addToRefs}></ConditionImg>
           <ConditionTextDiv ref={addToRefs}>
-            <ConditionTextH2></ConditionTextH2>
-            <ConditionTextP></ConditionTextP>
+            <ConditionTextH2>03 危険な流れ</ConditionTextH2>
+            <ConditionTextP>
+              離岸流というものがあります。
+              <br />
+              <Span>川の近くで発生し、陸から沖に向けて強く流れています。</Span>
+              <br />
+              気づいたら陸から沖に流されていたなんてこともあるので川の
+              <br />
+              近くでサーフィンするのは避けましょう。また、雨などで川の
+              <br />
+              水量が増えてる時はそうでない日の比ではないくらい強いので
+              <br />
+              より一層の警戒が必要です。
+              <br />
+              <br />
+              もちろん台風が近づいてる時の海は危険なので絶対に入らない
+              <br />
+              ようにしましょう。
+            </ConditionTextP>
           </ConditionTextDiv>
         </ConditionDiv>
       </ConditionWrap>
@@ -110,10 +127,25 @@ position: relative;
    border-radius: .5rem;
 `
 
-const ConditionTextH2 = styled.h2 `
+const ConditionTextH2 = styled.h2`
+  font-family: ta-kai-regular, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem;
+  padding-left: 5px;
+`;
 
-`
+const ConditionTextP = styled.p`
+  padding: 5px;
+  padding-bottom: 10px;
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.6rem;
+`;
 
-const ConditionTextP = styled.p `
 
-`
+const Span = styled.span`
+  font-weight: bold;
+  margin: 5px 0;
+`;

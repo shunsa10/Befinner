@@ -48,38 +48,47 @@ const Cafe3:React.FC = () => {
 
 
     return (
-        <>
-    <ContentDiv>
-      <TitleTextDiv className='SD'>
-
-        <TextDiv3 ref={addToRefs}> 
-            <BannerH2 ref={addToRefs}>
-                EAT Healthy<br />
-                Stay Healthy
-            </BannerH2>
-                <BannerP ref={addToRefs}>
-                     This is really nice Sorry to distrub, I made this website but sir<br />
-                     Facebook, Instagram and twitter.symbol is so <br />
-                     long.... Please help mePlease provide solution <br />
-                </BannerP>
-                <BannerA>READ NORE</BannerA>
-                <Icons>
-                    <IconsUl>
-                        <IconsLi><IconsA><IconsImg src={'./img/instagram.svg'} /></IconsA></IconsLi>
-                        <IconsLi><IconsA><IconsImg src={'./img/instagram.svg'} /></IconsA></IconsLi>
-                    </IconsUl>
-                </Icons>
-        </TextDiv3>
+      <>
+        <ContentDiv>
+          <TitleTextDiv className="SD">
+            <TextDiv3 ref={addToRefs}>
+              <BannerH2 ref={addToRefs}>
+                D-smile
+                <br />
+                in zaimokuza
+              </BannerH2>
+              <BannerP ref={addToRefs}>
+                ビーフカレーは自家製であの珊瑚礁のようなスパイシーさ
+                <br />
+                を感じます。
+                <br />
+                また、チーズケーキなどの海から上がった疲れた体に甘い
+                <br />
+                ものを入れたい時にはうってつけのものもある。
+                <br />
+                
+              </BannerP>
+              <BannerA href="https://tabelog.com/kanagawa/A1404/A140402/14077655/">
+                READ NORE
+              </BannerA>
+              <Icons>
+                <IconsUl>
+                  <IconsLi>
+                    <IconsA href="https://www.instagram.com/dsmile_kamakura/">
+                      <IconsImg src={"./img/instagram.svg"} />
+                    </IconsA>
+                  </IconsLi>
+                </IconsUl>
+              </Icons>
+            </TextDiv3>
 
             <BannerImgDiv3 ref={addToRefs}>
-                <BannerImg3 src={'./img/IMG_9220.png'} />  ////
+              <BannerImg3 src={"./img/IMG_9220.png"} /> ////
             </BannerImgDiv3>
-
-
-      </TitleTextDiv>
-    </ContentDiv>
-        </>
-    )
+          </TitleTextDiv>
+        </ContentDiv>
+      </>
+    );
 }
 
 export default Cafe3;

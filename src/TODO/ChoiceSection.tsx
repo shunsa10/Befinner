@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // import {useTest} from './TodoHooks/test'
-// import { pc, sp, tab } from '../media';
+
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -81,6 +81,18 @@ const ChoiceSection:React.FC = () => {
           <ChoiceTextDivS>
             <ChoiceTextH2S ref={addToRefs}>02 波のコンディション</ChoiceTextH2S>
             <ChoiceTextPS>
+              波は一定のリズムで、高低を繰り返しています。もちろん
+              <br />
+              高い波を狙いますが波が長い間崩れずに、横に長い時は
+              <br />
+              かなり乗りやすいでしょう。その日の波のサイクルを
+              <br />
+              見つけて、ベストな波に合わせるのが初乗りに繋がります。
+              <br />
+              <br />
+              少しでもサーフィンができそうにならとにかく海に入って
+              <br />
+              波を見極める感覚をつけることが上達に繋がります。
             </ChoiceTextPS>
           </ChoiceTextDivS>
         </ChoiceDivS>
@@ -159,9 +171,13 @@ position: relative;
    border-radius: .5rem;
 `
 
-const ChoiceTextH2 = styled.h2 `
-padding-left: 5px;
-`
+const ChoiceTextH2 = styled.h2`
+  font-family: ta-kai-regular, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem;
+  padding-left: 5px;
+`;
 
 const ChoiceTextP = styled.p `
 padding: 5px;
@@ -212,17 +228,25 @@ const ChoiceTextDivS = styled.div `
     box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, .3);
     width: 28rem;
-    height: 20rem;
+    height: 18rem;
    margin: 0 auto;
    padding: 5px 10px;
    border-radius: .5rem;
 `
 
-const ChoiceTextH2S = styled.h2 `
+const ChoiceTextH2S = styled.h2`
+  font-family: ta-kai-regular, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem;
+  padding-left: 5px;
+`;
 
-`
-
-const ChoiceTextPS = styled.p `
-
-
-`
+const ChoiceTextPS = styled.p`
+  padding: 5px;
+  padding-bottom: 10px;
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.6rem;
+`;

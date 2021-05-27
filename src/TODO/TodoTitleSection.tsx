@@ -5,10 +5,10 @@ import { tab } from '../media';
 const TodoTitleSection:React.FC = () => {
     return (
         <TitleWrap>
-
+{/* 
             <H2TextDiv>
                 <H2Text>To beginners</H2Text>
-            </H2TextDiv>
+            </H2TextDiv> */}
 
             <TitleDiv>
                 <TitleImg></TitleImg>
@@ -48,27 +48,28 @@ object-fit: cover;
 align-content: space-between;
 overflow: hidden;
 `
-const H2TextDiv = styled.div `
-position: relative;
-width: 80%;
-display: flex;
-justify-content: center;
-padding: 0 5rem;
-text-align: center;
-overflow: hidden;
-margin: 0 auto;
-`
-const H2Text = styled.h2 `
-    position: relative;
-    bottom: 1rem;
-    width: 100%;
-    font-family: "Times New Roman",Times,serif;
-    font-weight: normal;
-    letter-spacing: 0.08em;
-    border-bottom: 1px solid rgba(35, 24, 21, 0.3);
-    text-align: center;
-    z-index: 9;
-`
+// const H2TextDiv = styled.div `
+// position: relative;
+// top: -10%;
+// width: 90%;
+// top: 2rem;
+// display: flex;
+// justify-content: center;
+// padding: 0 5rem;
+// text-align: center;
+// overflow: hidden;
+// margin: 0 auto;
+// `
+// const H2Text = styled.h2`
+//   width: 100%;
+//   font-family: "Times New Roman", Times, serif;
+//   font-weight: normal;
+//   letter-spacing: 0.08em;
+//   text-align: center;
+//   border-bottom: 1px solid rgba(35, 24, 21, 0.3);
+//   z-index: 9;
+//   margin: 0;
+// `;
 const TitleDiv = styled.div `
 position: relative;
 top: 1rem;

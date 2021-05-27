@@ -49,8 +49,40 @@ const MannersSection:React.FC = () => {
         <MannersDiv>
           <MannersImg ref={addToRefs}></MannersImg>
           <MannersTextDiv ref={addToRefs}>
-            <MannersTextH2></MannersTextH2>
-            <MannersTextP></MannersTextP>
+            <MannersTextH2>05 ありがちなローカルルール</MannersTextH2>
+            <MannersTextP>
+              <Span>一つの波には一人までというローカルルールがあります。</Span>
+              <br />
+              ですが正確には一つの波で同じ方向は一人までという意味
+              <br />
+              なので十分に距離が取れていれば安全面で問題なしです。
+              <br />
+              <br />
+              率先して人が少ないところに行くのはとても大切です。初
+              <br />
+              心者として安全も確保できますし、
+              <Span>
+                マナーとしてもよく見
+                <br />
+                られます。
+              </Span>
+              <br />
+              <br />
+              サーファー同士の挨拶の欠かせません見た目はいかつくて
+              <br />
+              怖そうな人が多いですが
+              <Span>
+                みんな心からサーフィンを楽しめ
+                <br />
+                る、優しい人です。
+              </Span>
+              <br />
+              ルールは場所によってもまちまちで過剰なところはあります
+              <br />
+              が、どれも一歩間違えれば命に関わってくるのでルールを守る
+              <br />
+              意識だけでもしておきましょう。
+            </MannersTextP>
           </MannersTextDiv>
         </MannersDiv>
       </MannersWrap>
@@ -78,7 +110,7 @@ margin-top: 8rem;
 const MannersDiv = styled.div `
 position: relative;
 display: flex;
-height: 50rem;
+height: 100vh;
 top: -8rem;
 `
 
@@ -106,11 +138,32 @@ const MannersTextDiv = styled.div `
    border-radius: .5rem;
 `
 
-const MannersTextH2 = styled.h2 `
+const MannersTextH2 = styled.h2`
+  position: relative;
+  top: 7rem;
+  font-family: ta-kai-regular, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 2rem;
+  padding-left: 5px;
+  z-index: 10;
+ margin: 10px 45px;
+`;
 
-`
+const MannersTextP = styled.p`
+  position: relative;
+  top: 7rem;
+  padding: 5px;
+  padding-bottom: 10px;
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.6rem;
+  margin: 0 auto;
+`;
 
-const MannersTextP = styled.p `
 
-`
-
+const Span = styled.span`
+  font-weight: bold;
+  margin: 5px 0;
+`;

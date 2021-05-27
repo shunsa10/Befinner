@@ -39,18 +39,20 @@ const AProfile: React.FC = () => {
             <MyValues>My Values top10</MyValues>
             <ValuesUl>
               <ValuesLi>1.成長　精神、スキルで成長する　</ValuesLi>
-              <ValuesP>　=&gt; 成長することでさらに次のステージへ進める</ValuesP>
+              <ValuesP>
+                　=&gt; 成長することでさらに次のステージへ進める
+              </ValuesP>
               <ValuesLi>2.達成　重要なことを達成する</ValuesLi>
               <ValuesP>　=&gt; 自分の存在を周りに認めさせる</ValuesP>
               <ValuesLi>3.性愛　満足の育成生活を送る</ValuesLi>
               <ValuesP>　=&gt; sexは愛情表現の最上位互換。</ValuesP>
               <ValuesLi>4.興奮　スリルと刺激を持つ</ValuesLi>
-              <ValuesP>　=&gt;
-                リスク上等、追い込まれた状態でこそ人は成長できる
+              <ValuesP>
+                　=&gt; リスク上等、追い込まれた状態でこそ人は成長できる
               </ValuesP>
               <ValuesLi>5.情熱　何らかの情熱を持つ</ValuesLi>
-              <ValuesP>　=&gt;
-                心の底から熱を持てることはきっと人生で何回もない
+              <ValuesP>
+                　=&gt; 心の底から熱を持てることはきっと人生で何回もない
               </ValuesP>
               <ValuesLi>6.友情　親密な友人を持つ</ValuesLi>
               <ValuesP>　=&gt; 楽しいことは友人と共有したい</ValuesP>
@@ -82,8 +84,9 @@ const AProfile: React.FC = () => {
           <ContentY>
             <ContentH2Y>YouTube</ContentH2Y>
             <ContentPY>
-              Lorem ipsum dolor sit amet, consectur adipidicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              YouTubeではvlog制作や動画のトラッキングなどを
+              <br />
+              　投稿しています。リンクは地元をテーマにした作品です。
             </ContentPY>
             <ContentAY href="https://youtu.be/-IrpOjnarbg">Read More</ContentAY>
           </ContentY>
@@ -105,8 +108,9 @@ const AProfile: React.FC = () => {
           <ContentT>
             <ContentH2T>Twitter</ContentH2T>
             <ContentPT>
-              Lorem ipsum dolor sit amet, consectur adipidicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Twitterでは技術を学んでいく中で感じたことや
+              <br />
+              旬な技術の情報収集、コミュニティ作りをしています。
             </ContentPT>
             <ContentAT href="https://twitter.com/siyu_style">
               Read More
@@ -130,8 +134,9 @@ const AProfile: React.FC = () => {
           <ContentI>
             <ContentH2I>Instagram</ContentH2I>
             <ContentPI>
-              Lorem ipsum dolor sit amet, consectur adipidicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Instagramではsnsマーケティングの実践として
+              <br />
+              生活術やクラウドファンディングについて発信。
             </ContentPI>
             <ContentAI href="#">Read More</ContentAI>
           </ContentI>
@@ -148,8 +153,9 @@ const AProfile: React.FC = () => {
           <ContentQ>
             <ContentH2Q>Qiita</ContentH2Q>
             <ContentPQ>
-              Lorem ipsum dolor sit amet, consectur adipidicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Qiitaでは議事録として悩んだことをまとめて
+              <br />
+              後から振り返れるようにしています。
             </ContentPQ>
             <ContentAQ href="https://qiita.com/shunsa10">Read More</ContentAQ>
           </ContentQ>
@@ -459,9 +465,12 @@ const ContentAY = styled.a`
   }
 `;
 const ContentPY = styled.p`
+  content: attr(data-en);
+  font-family: a-otf-ryumin-pr6n, serif;
+  font-weight: 600;
+  font-style: normal;
   margin: 1rem 0;
   padding: 0;
-
   opacity: 0;
   transition: 0.5s;
   transform: translateY(20px);
@@ -591,9 +600,12 @@ const ContentAT = styled.a`
   }
 `;
 const ContentPT = styled.p`
+  content: attr(data-en);
+  font-family: a-otf-ryumin-pr6n, serif;
+  font-weight: 600;
+  font-style: normal;
   margin: 1rem 0;
   padding: 0;
-
   opacity: 0;
   transition: 0.5s;
   transform: translateY(20px);
@@ -725,9 +737,12 @@ const ContentAI = styled.a`
   }
 `;
 const ContentPI = styled.p`
+  content: attr(data-en);
+  font-family: a-otf-ryumin-pr6n, serif;
+  font-weight: 600;
+  font-style: normal;
   margin: 1rem 0;
   padding: 0;
-
   opacity: 0;
   transition: 0.5s;
   transform: translateY(20px);
@@ -861,9 +876,12 @@ const ContentAQ = styled.a`
   }
 `;
 const ContentPQ = styled.p`
+  content: attr(data-en);
+  font-family: a-otf-ryumin-pr6n, serif;
+  font-weight: 600;
+  font-style: normal;
   margin: 1rem 0;
   padding: 0;
-
   opacity: 0;
   transition: 0.5s;
   transform: translateY(20px);
