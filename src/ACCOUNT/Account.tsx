@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
-import { pc, sp, tab } from "../media";
+import { tab } from "../media";
 import {AccountContext} from '../context/AccountContext'
 import Signin from './Signin'
 import Signup from './Signup'

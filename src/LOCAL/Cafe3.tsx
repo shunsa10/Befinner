@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import styled, {css} from 'styled-components'
-import { sp, tab } from "../media";
+import { sp } from "../media";
 import { gsap } from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
 

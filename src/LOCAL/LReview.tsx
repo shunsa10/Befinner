@@ -5,7 +5,7 @@ import LReviewSub1 from "./LReviewSub1";
 import LReviewSub2 from "./LReviewSub2";
 import LReviewSub3 from "./LReviewSub3";
 import LReviewSub4 from "./LReviewSub4";
-import { sp, tab } from "../media";
+import { sp } from "../media";
 
 
 

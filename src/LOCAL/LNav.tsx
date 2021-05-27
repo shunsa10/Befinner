@@ -3,7 +3,7 @@ import React from 'react';
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
-import { sp, tab } from "../media";
+import { sp } from "../media";
 
 
 type ToggleProps = {

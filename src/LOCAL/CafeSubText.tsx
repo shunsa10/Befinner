@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react';
-import styled, {css} from 'styled-components'
+import React from 'react';
+import styled from 'styled-components'
 import { sp } from "../media";
 
 const CafeSubText:React.FC = () => {

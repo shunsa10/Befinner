@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
-import { sp, tab } from '../media';
+import { sp } from '../media';
 
 const GadgetSection:React.FC = () => {
 

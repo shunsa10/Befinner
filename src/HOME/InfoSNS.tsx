@@ -4,8 +4,8 @@ import styled, { css } from "styled-components";
 import { useContext } from "react";
 import { StyleContext } from "../context/StyleContext";
 import { auth } from "../firebase/config";
-import { AuthContext } from "../context/AuthContext";
-import { pc, sp, tab } from "../media";
+
+import { tab } from "../media";
 
 type ToggleProps = {
   styles?: boolean;

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
-import { sp, tab } from '../media';
+import { sp } from '../media';
 import {Link} from 'react-router-dom';
 
 const Footer:React.FC = () => {

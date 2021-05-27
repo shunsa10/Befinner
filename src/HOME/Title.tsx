@@ -4,7 +4,7 @@ import styled, {css} from 'styled-components'
 import {StyleContext} from '../context/StyleContext'
 import {useContext} from 'react'
 
-import { pc, sp, tab } from "../media";
+import { sp, tab } from "../media";
 
 type ToggleProps = {
     styles?: boolean
@@ -74,6 +74,11 @@ const ContentH2 = styled.h2`
        top: 2rem;
        
 `}
+  ${sp`
+       top: 4rem;
+       font-size: 4rem;
+       
+`}
 `;
 
 const H2span = styled.span`
@@ -87,6 +92,12 @@ const H2span = styled.span`
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   ${tab`
+        font-size: 0.25em;
+        font-weight: 300;
+        letter-spacing: 2px;
+        padding: 0 5px;
+`}
+  ${sp`
         font-size: 0.25em;
         font-weight: 300;
         letter-spacing: 2px;
