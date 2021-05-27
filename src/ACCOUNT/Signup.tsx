@@ -8,7 +8,7 @@ import {useState} from 'react'
 import { auth } from "../firebase/config";
 import {useHistory} from 'react-router-dom'
 import {useAccountHooks} from './Hooks/AccountHooks'
-import { pc, sp, tab } from "../media";
+import { sp, tab } from "../media";
 
 
 const useStyles = makeStyles({

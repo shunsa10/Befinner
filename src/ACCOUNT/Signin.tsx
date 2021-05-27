@@ -9,7 +9,7 @@ import {AccountContext} from '../context/AccountContext'
 import {useHistory} from 'react-router-dom'
 import {auth} from '../firebase/config'
 import { useAccountHooks } from "./Hooks/AccountHooks";
-import { pc, sp, tab } from "../media";
+import { sp, tab } from "../media";
 
 const useStyles = makeStyles({
   Input: {
