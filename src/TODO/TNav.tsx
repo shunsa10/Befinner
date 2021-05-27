@@ -3,7 +3,7 @@ import React from 'react';
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
-
+import { sp, tab } from "../media";
 
 
 type ToggleProps = {
@@ -27,39 +27,49 @@ const TNav:React.FC = () => {
 export default TNav;
 
 
-const TNavDiv = styled.div<ToggleProps> `
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10%;
-    backdrop-filter: blur(15px);
-    z-index: 1;
-    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
-    transition: 0.5s;
-    transition-delay: 1s;
-    ${({styles}) => styles ? css `
-     height: 100%;
-     backdrop-filter: blur(15px);
-     box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
-     transition-delay: 0s;
-      z-index: 100;
-    ` : ''}
-`
+const TNavDiv = styled.div<ToggleProps>`
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  backdrop-filter: blur(15px);
+  z-index: 1;
+  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  transition-delay: 1s;
+  ${({ styles }) =>
+    styles
+      ? css`
+          height: 100%;
+          backdrop-filter: blur(15px);
+          box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
+          transition-delay: 0s;
+          z-index: 100;
+        `
+      : ""}
+`;
 
 
 
-const UlNav = styled.ul<ToggleProps> `
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 100;
-    pointer-events: none;
-     ${({styles}) => styles ? css `
-    pointer-events: auto;
-    ` : ''}
-`
+const UlNav = styled.ul<ToggleProps>`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  pointer-events: none;
+  ${({ styles }) =>
+    styles
+      ? css`
+          pointer-events: auto;
+          ${sp`
+    left: 48%;
+    `}
+        `
+      : ""}
+`;
 const LiNav = styled.li<ToggleProps>`
     list-style: none;
     text-align: center;

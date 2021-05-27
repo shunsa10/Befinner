@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
-// import { pc, sp, tab } from '../media';
+import { sp, tab } from '../media';
 
 const GadgetSection:React.FC = () => {
 
@@ -89,45 +89,57 @@ const GadgetSection:React.FC = () => {
 
 export default GadgetSection;
 
-const GadgetWrap = styled.div `
-position: relative;
-top: -20rem;
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
+const GadgetWrap = styled.div`
+  position: relative;
+  top: -20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 
-`
+  ${sp`
+  flex-wrap: wrap;
+  top: -53rem;
+  min-height: 38rem;
+`}
+`;
 
-const GadgetConteiner = styled.div `
-position: relative;
-margin: 0 15px;
-display: flex;
-flex-wrap: wrap;
-transform-style: preserve-3d;
-perspective: 500px;
-
-`
-const Gadgetbox = styled.div `
-position: relative;
-width: 275px;
-height: 300px;
-background: #000;
-transition: .5s;
-transform-style: preserve-3d;
-${GadgetWrap}:hover & {
-     transform: rotateY(25deg);
- }
-${GadgetConteiner}:hover ~ ${GadgetConteiner} & {
-     transform: rotateY(-25deg);
- }
-${GadgetConteiner}:hover & {
-     transform: rotateY(0deg);
-     transform: scale(1.25);
-     z-index: 1;
-     box-shadow: 0 25px 40px rgba(0, 0, 0, .5);
- }
-`
+const GadgetConteiner = styled.div`
+  position: relative;
+  margin: 0 15px;
+  display: flex;
+  flex-wrap: wrap;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  ${sp`
+  flex-wrap: wrap;
+ margin: 0 5px;
+`}
+`;
+const Gadgetbox = styled.div`
+  position: relative;
+  width: 275px;
+  height: 300px;
+  background: #000;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  ${sp`
+width: 150px;
+  height: 190px;
+`}
+  ${GadgetWrap}:hover & {
+    transform: rotateY(25deg);
+  }
+  ${GadgetConteiner}:hover ~ ${GadgetConteiner} & {
+    transform: rotateY(-25deg);
+  }
+  ${GadgetConteiner}:hover & {
+    transform: rotateY(0deg);
+    transform: scale(1.25);
+    z-index: 1;
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.5);
+  }
+`;
   
 const GadgetImg0 = styled.div `
 position: absolute;
@@ -169,46 +181,55 @@ background-image: url('./img/img84.jpg');
 background-position: center;
 background-size: cover;
 `
-const GadgetContent = styled.div `
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: 1;
-display: flex;
-padding: 20px;
-align-items: flex-end;
-box-sizing: border-box;
-`
+const GadgetContent = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  padding: 20px;
+  align-items: flex-end;
+  box-sizing: border-box;
+  ${sp`
+padding: 10px;
+`}
+`;
 const GadgetTextBox = styled.div `
 `
-const GadgetH2 = styled.h2 `
-color: #fff;
-transition: .5s;
-text-transform: uppercase;
-margin-bottom: 5px;
-font-size: 20px;
-transform: translateY(200px);
-opacity: 0;
-${Gadgetbox}:hover & {
+const GadgetH2 = styled.h2`
+  color: #fff;
+  transition: 0.5s;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: 20px;
+  transform: translateY(200px);
+  opacity: 0;
+  ${sp`
+font-size: .2rem;
+`}
+  ${Gadgetbox}:hover & {
     transform: translateY(0px);
-    transition-delay: .6s;
+    transition-delay: 0.6s;
     opacity: 1;
-}
-`
-const GadgetP = styled.p `
-color: #fff;
-transition: .5s;
-font-size: 14px;
-transform: translateY(200px);
-opacity: 0;
-${Gadgetbox}:hover & {
+  }
+`;
+const GadgetP = styled.p`
+  color: #fff;
+  transition: 0.5s;
+  font-size: 14px;
+  transform: translateY(200px);
+  opacity: 0;
+  ${sp`
+font-size: .1rem;
+`}
+  ${Gadgetbox}:hover & {
     transform: translateY(0px);
-     transition-delay: .8s;
-     opacity: 1;
-}
-`
+    transition-delay: 0.8s;
+    opacity: 1;
+  }
+`;
 
 const Content = styled.a`
   text-decoration: none;
@@ -220,6 +241,9 @@ const Content = styled.a`
   opacity: 0;
   transition: 0.5s;
   transform: translateY(50px);
+  ${sp`
+font-size: 3px;
+`}
   ${Gadgetbox}:hover & {
     transform: translateY(0px);
     transition-delay: 1s;

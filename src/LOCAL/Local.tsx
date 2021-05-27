@@ -8,6 +8,7 @@ import LRview from './LReview'
 import LMain from './LMain'
 import LFooter from './LFooter'
 import styled from 'styled-components'
+import { sp } from "../media";
 
 
 const Local:React.FC = () => {
@@ -38,13 +39,17 @@ const Local:React.FC = () => {
 export default Local;
 
 
-const LocalMainDiv = styled.div `
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
-    width: 100vw;
-    height: 600px;
-    background-image: url('../img/img130.jpg');
-    background-size: cover;
-`
+const LocalMainDiv = styled.div`
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+  width: 100vw;
+  height: 600px;
+  background-image: url("../img/img130.jpg");
+  background-size: cover;
+  ${sp`
+    height: 450px;
+    `}
+`;

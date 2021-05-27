@@ -2,7 +2,7 @@ import React from 'react';
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
-
+import { sp } from "../media";
 
 type ToggleProps = {
     styles?: boolean
@@ -53,31 +53,38 @@ const Logo = styled.a `
     z-index: 2;            
 `
 
-const Toggle = styled.div<ToggleProps> `
-position: relative;
-    width: 50px;
-    height: 50px;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    background-size: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url('../img/menu.png');
+const Toggle = styled.div<ToggleProps>`
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("../img/menu.png");
+  ${sp`
+   left: 35px;
+   top: -3px
+`}
 
-    ${({styles}) => styles ? css `
-        background-image: url('./img/close.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        background-size: 30px;
-    ` : ''}
+  ${({ styles }) =>
+    styles
+      ? css`
+          background-image: url("./img/close.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          cursor: pointer;
+          background-size: 30px;
+        `
+      : ""}
 
     
     z-index: 3;
-    &:before {
-    content: 'Menu';
+  &:before {
+    content: "Menu";
     position: absolute;
     right: 45px;
     text-transform: uppercase;
@@ -87,7 +94,6 @@ position: relative;
     padding: 2px 5px;
     background-color: #fff;
     color: #111;
-    }
-
-`
+  }
+`;
 

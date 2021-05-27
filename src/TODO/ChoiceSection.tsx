@@ -1,10 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import styled from 'styled-components'
-
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { sp, tab } from "../media";
 // import {useTest} from './TodoHooks/test'
 
 
@@ -103,20 +101,23 @@ const ChoiceSection:React.FC = () => {
 
 export default ChoiceSection;
 
-const ChoiceWrap = styled.div `
-position: relative;
-top: 15rem;
-display: flex;
-flex-direction: column;
-width: 100vw;
-height: 100rem;
-display: flex;
-justify-content: space-around;
-object-fit: cover;
-align-content: space-between;
-overflow: hidden;
-margin-bottom: 10rem;
-`
+const ChoiceWrap = styled.div`
+  position: relative;
+  top: 15rem;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100rem;
+  display: flex;
+  justify-content: space-around;
+  object-fit: cover;
+  align-content: space-between;
+  overflow: hidden;
+  margin-bottom: 10rem;
+  ${sp`
+  top: 5rem;
+  `}
+`;
 ///////////////////////////////////////////
 const TodosT = styled.div`
   position: relative;
@@ -131,45 +132,62 @@ const TodosTH2 = styled.h2`
   font-style: normal;
   letter-spacing: 1px;
   font-size: 1.5rem;
+  ${sp`
+  font-size: 1rem;
+  `}
 `;
 
-const ChoiceDiv = styled.div `
-position: relative;
-top: -5.3em;
-display: flex;
-height: 100%;
-padding: 0 5rem;
-`
+const ChoiceDiv = styled.div`
+  position: relative;
+  top: -5.3em;
+  display: flex;
+  height: 100%;
+  padding: 0 5rem;
+  ${sp`
+  top: -6rem;
+  width: 100%;
+  `}
+`;
 
-const ChoiceImg = styled.div `
-position: absolute;
-top: 30%;
-left: 45%;
-width: 50%;
-height: 45rem;
-/* height: 90%; */
-background-image: url('./img/img40.jpg');
-background-position: center;
-background-size: cover;
-border-radius: 5px;
-`
+const ChoiceImg = styled.div`
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  width: 50%;
+  height: 45rem;
+  background-image: url("./img/img40.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  ${sp`
+  width: 60%;
+  height: 25rem;
+  left: 0;
+  `}
+`;
 ///////////////////////////////////////////
-const ChoiceTextDiv = styled.div `
-position: relative;
-    top: 28%;
-    left: -23%;
-    display: flex;
-    flex-direction: column;
-    backdrop-filter: blur(10px);
-    z-index: 1;
-    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, .3);
-    width: 28rem;
-    height: 23rem;
-   margin: 0 auto;
-   padding: 5px 10px;
-   border-radius: .5rem;
-`
+const ChoiceTextDiv = styled.div`
+  position: relative;
+  top: 28%;
+  left: -23%;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 28rem;
+  height: 23rem;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border-radius: 0.5rem;
+  ${sp`
+  top: 50%;
+  left: -20%;
+  width: 90%;
+  height: 20rem;
+  `}
+`;
 
 const ChoiceTextH2 = styled.h2`
   font-family: ta-kai-regular, sans-serif;
@@ -177,62 +195,87 @@ const ChoiceTextH2 = styled.h2`
   font-style: normal;
   font-size: 2rem;
   padding-left: 5px;
+  ${sp`
+  font-size: 1.7rem;
+  `}
 `;
 
-const ChoiceTextP = styled.p `
-padding: 5px;
-padding-bottom: 10px;
-margin: 0;
-font-size: 1rem;
-text-align: left;
-line-height: 1.6rem;
-`
+const ChoiceTextP = styled.p`
+  padding: 5px;
+  padding-bottom: 10px;
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.6rem;
+  ${sp`
+  font-size: .7rem;
+  line-height: 1.3rem;
+  `}
+`;
 
-const Span = styled.span `
-font-weight: bold;
-margin: 5px 0;
-`
+const Span = styled.span`
+  font-weight: bold;
+  margin: 5px 0;
+  ${sp`
+  font-size: .7rem;
+  line-height: 1.3rem;
+  `}
+`;
 
 ///////////////////////////////////////////
 ///////////////////////////////////////////
-const ChoiceDivS = styled.div `
-position: relative;
-display: flex;
-height: 100%;
-padding: 0 5rem;
-
-
-`
+const ChoiceDivS = styled.div`
+  position: relative;
+  display: flex;
+  height: 100%;
+  padding: 0 5rem;
+  ${sp`
+  top: -6rem;
+  width: 100%;
+  `}
+`;
 ///////////////////////////////////////////
-const ChoiceImgS = styled.div `
-position: absolute;
-top: -10%;
-left: 5%;
-width: 50%;
-/* height: 90%; */
-height: 45rem;
-background-image: url('./img/img41.jpg');
-background-position: center;
-background-size: cover;
-border-radius: 5px;
-`
+const ChoiceImgS = styled.div`
+  position: absolute;
+  top: -10%;
+  left: 5%;
+  width: 50%;
+  /* height: 90%; */
+  height: 45rem;
+  background-image: url("./img/img41.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  ${sp`
+  top: 10%;
+  width: 60%;
+  height: 25rem;
+  left: 9%;
+  `}
+`;
 ///////////////////////////////////////////
-const ChoiceTextDivS = styled.div `
-    position: relative;
-    top: 13%;
-    left: 22%;
-    display: flex;
-    flex-direction: column;
-    backdrop-filter: blur(10px);
-    z-index: 1;
-    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, .3);
-    width: 28rem;
-    height: 18rem;
-   margin: 0 auto;
-   padding: 5px 10px;
-   border-radius: .5rem;
-`
+const ChoiceTextDivS = styled.div`
+  position: relative;
+  top: 13%;
+  left: 22%;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 28rem;
+  height: 18rem;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border-radius: 0.5rem;
+  ${sp`
+  top: 50%;
+  left: -25%;
+  width: 90%;
+  height: 15rem;
+  `}
+`;
 
 const ChoiceTextH2S = styled.h2`
   font-family: ta-kai-regular, sans-serif;
@@ -240,6 +283,9 @@ const ChoiceTextH2S = styled.h2`
   font-style: normal;
   font-size: 2rem;
   padding-left: 5px;
+  ${sp`
+  font-size: 1.7rem;
+  `}
 `;
 
 const ChoiceTextPS = styled.p`
@@ -249,4 +295,8 @@ const ChoiceTextPS = styled.p`
   font-size: 1rem;
   text-align: left;
   line-height: 1.6rem;
+  ${sp`
+  font-size: .7rem;
+  line-height: 1.3rem;
+  `}
 `;

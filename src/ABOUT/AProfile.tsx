@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import { sp } from "../media";
 
 const AProfile: React.FC = () => {
   return (
@@ -199,6 +200,9 @@ const ProfilDiv = styled.div`
   height: 24rem;
   margin-bottom: 1.5rem;
   overflow: hidden;
+  ${sp`
+  width: 23rem;
+  `}
 `;
 
 const ImgBxaIm = styled.div`
@@ -241,6 +245,10 @@ const ProText = styled.div`
   box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
   border-radius: 0.7rem;
   margin: 0 1rem 1rem 1rem;
+  ${sp`
+  width: 100%;
+  left: -15px;
+  `}
 `;
 
 const MyName = styled.h4`
@@ -270,6 +278,9 @@ const MyPro = styled.p`
   font-family: serif;
   z-index: 20;
   margin: 0;
+  ${sp`
+  font-size: .7rem;
+  `}
 `;
 ///////////////////////////////////////////////////////
 const ValuesDiv = styled.div`
@@ -280,11 +291,13 @@ const ValuesDiv = styled.div`
   overflow: hidden;
   background-color: #0c0b0b;
   border-radius: 0.7rem;
-
   overflow-y: scroll;
   scroll-snap-type: y;
   transform: translateZ(0);
-  
+  ${sp`
+  width: 23rem;
+  `}
+
   ::-webkit-scrollbar {
     width: 15px;
   }
@@ -339,10 +352,10 @@ const MyValues = styled.h3`
 `;
 
 const ValuesUl = styled.ul`
-color: #fff;
-list-style: none;
-margin: 0 ;
-padding: 0 3rem;
+  color: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 0 3rem;
 `;
 const ValuesLi = styled.li`
   content: attr(data-en);
@@ -350,6 +363,9 @@ const ValuesLi = styled.li`
   font-weight: 800;
   font-style: normal;
   font-size: 1.2rem;
+  ${sp`
+font-size: 1rem;
+`}
 `;
 const ValuesP = styled.p`
   content: attr(data-en);
@@ -358,6 +374,9 @@ const ValuesP = styled.p`
   font-style: normal;
   margin-top: 2px;
   margin-bottom: 1.2rem;
+  ${sp`
+font-size: .7rem;
+`}
 `;
 
 ///////////////////////////////////////////////////////////
@@ -367,6 +386,9 @@ const YouTubeDiv = styled.div`
   height: 24rem;
   margin-bottom: 1.5rem;
   overflow: hidden;
+  ${sp`
+  width: 23rem;
+  `}
 `;
 const ImgBxY = styled.div`
   position: absolute;
@@ -410,6 +432,9 @@ const YoutubeTitle = styled.h2`
   font-family: luxus-brut, cursive;
   font-style: italic;
   transition: 1s;
+  ${sp`
+   left: 35%;
+  `}
   ${YouTubeDiv}:hover & {
     opacity: 0;
     transform: translateY(0px);
@@ -446,7 +471,6 @@ const ContentAY = styled.a`
   color: #fff;
   padding: 5px;
   display: inline-block;
-
   opacity: 0;
   transition: 0.5s;
   transform: translateY(20px);
@@ -474,6 +498,9 @@ const ContentPY = styled.p`
   opacity: 0;
   transition: 0.5s;
   transform: translateY(20px);
+  ${sp`
+   font-size: .7rem;
+  `}
   ${YouTubeDiv}:hover & {
     opacity: 1;
     transform: translateY(0px);
@@ -490,6 +517,9 @@ const IconY = styled.div`
   text-align: center;
   margin-top: 3.2rem;
   opacity: 0;
+  ${sp`
+   left: 36%;
+  `}
   ${YouTubeDiv}:hover & {
     opacity: 1;
     transform: translateY(0px);
@@ -504,6 +534,9 @@ const TwitterDiv = styled.div`
   height: 24rem;
   margin-bottom: 1.5rem;
   overflow: hidden;
+  ${sp`
+  width: 23rem;
+  `}
 `;
 const ImgBxT = styled.div`
   position: absolute;
@@ -547,6 +580,9 @@ const TwitterTitle = styled.h2`
   font-family: luxus-brut, cursive;
   font-style: italic;
   transition: 1s;
+  ${sp`
+   left: 35%;
+  `}
   ${TwitterDiv}:hover & {
     opacity: 0;
     transform: translateY(0px);
@@ -609,6 +645,9 @@ const ContentPT = styled.p`
   opacity: 0;
   transition: 0.5s;
   transform: translateY(20px);
+  ${sp`
+   font-size: .7rem;
+  `}
   ${TwitterDiv}:hover & {
     opacity: 1;
     transform: translateY(0px);
@@ -625,6 +664,9 @@ const IconT = styled.div`
   text-align: center;
   margin-top: 3.4rem;
   opacity: 0;
+  ${sp`
+   left: 36%;
+  `}
   ${TwitterDiv}:hover & {
     opacity: 1;
     transform: translateY(0px);
@@ -640,6 +682,9 @@ const InstgramDiv = styled.div`
   height: 24rem;
   margin-bottom: 1.5rem;
   overflow: hidden;
+  ${sp`
+  width: 23rem;
+  `}
 `;
 const ImgBxI = styled.div`
   position: absolute;
@@ -665,6 +710,9 @@ const InstgramTitle = styled.h2`
   font-family: luxus-brut, cursive;
   font-style: italic;
   transition: 1s;
+  ${sp`
+   left: 33%;
+  `}
   ${InstgramDiv}:hover & {
     opacity: 0;
     transform: translateY(0px);
@@ -746,6 +794,9 @@ const ContentPI = styled.p`
   opacity: 0;
   transition: 0.5s;
   transform: translateY(20px);
+  ${sp`
+   font-size: .7rem;
+  `}
   ${InstgramDiv}:hover & {
     opacity: 1;
     transform: translateY(0px);
@@ -762,6 +813,9 @@ const IconI = styled.div`
   text-align: center;
   margin-top: 3.2rem;
   opacity: 0;
+  ${sp`
+   left: 37%;
+  `}
   ${InstgramDiv}:hover & {
     opacity: 1;
     transform: translateY(0px);
@@ -778,6 +832,9 @@ const QiitaDiv = styled.div`
   height: 24rem;
   margin-bottom: 1.5rem;
   overflow: hidden;
+  ${sp`
+  width: 23rem;
+  `}
 `;
 const ImgBxQ = styled.div`
   position: absolute;
@@ -804,6 +861,9 @@ const QittaTitle = styled.h2`
   font-family: luxus-brut, cursive;
   font-style: italic;
   transition: 1s;
+  ${sp`
+   left: 37%;
+  `}
   ${QiitaDiv}:hover & {
     opacity: 0;
     transform: translateY(0px);
@@ -885,6 +945,9 @@ const ContentPQ = styled.p`
   opacity: 0;
   transition: 0.5s;
   transform: translateY(20px);
+  ${sp`
+   font-size: .7rem;
+  `}
   ${QiitaDiv}:hover & {
     opacity: 1;
     transform: translateY(0px);
@@ -901,6 +964,9 @@ const IconQ = styled.div`
   text-align: center;
   margin-top: 3.8rem;
   opacity: 0;
+  ${sp`
+   left: 39%;
+  `}
   ${QiitaDiv}:hover & {
     opacity: 1;
     transform: translateY(0px);

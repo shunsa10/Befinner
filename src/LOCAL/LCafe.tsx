@@ -1,8 +1,9 @@
-import React,{ useRef, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components'
 import Cafe1 from './Cafe1'
 import Cafe2 from './Cafe2'
 import Cafe3 from './Cafe3'
+import { sp } from "../media";
 import CafeSubText from './CafeSubText'
 
 
@@ -22,12 +23,15 @@ const LCafe:React.FC = () => {
 
 export default LCafe;
 
-const Container = styled.div `
-    overflow: hidden;
-    position: relative;
-    padding: 30px 50px;
-    padding-bottom: 10rem;
-    top: 3rem;
-    background-color: #e8eee1;
-`
+const Container = styled.div`
+  overflow: hidden;
+  position: relative;
+  padding: 30px 50px;
+  padding-bottom: 10rem;
+  top: 3rem;
+  background-color: #e8eee1;
+  ${sp`
+    padding: 30px 20px;
+    `}
+`;
 

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import styled from 'styled-components'
-// import { pc, sp, tab } from '../media';
+import { sp, tab } from '../media';
 
 
 import { gsap } from "gsap";
@@ -77,55 +77,74 @@ const ConditionSection:React.FC = () => {
 export default ConditionSection;
 
 
-const ConditionWrap = styled.div `
-position: relative;
-display: flex;
-flex-direction: column;
-width: 100vw;
-height: 100%;
-display: flex;
-justify-content: space-around;
-object-fit: cover;
-align-content: space-between;
-overflow: hidden;
-`
+const ConditionWrap = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  object-fit: cover;
+  align-content: space-between;
+  overflow: hidden;
+  ${sp`
+  top: -12rem;
+  `}
+`;
 ///////////////////////////////////////////
-const ConditionDiv = styled.div `
-position: relative;
-display: flex;
-height: 50rem;
-padding: 0 5rem;
-top: -8rem;
-`
+const ConditionDiv = styled.div`
+  position: relative;
+  display: flex;
+  height: 50rem;
+  padding: 0 5rem;
+  top: -8rem;
+  ${sp`
+  top: -6rem;
+  width: 100%;
+  `}
+`;
 
-const ConditionImg = styled.div `
-position: absolute;
-top: 50%;
-left: 35%;
-width: 55%;
-height: 60%;
-background-image: url('./img/img50.jpg');
-background-position: center;
-background-size: cover;
-border-radius: 5px;
-`
+const ConditionImg = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  width: 55%;
+  height: 60%;
+  background-image: url("./img/img50.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  ${sp`
+  top: 35%;
+  width: 60%;
+  height: 25rem;
+  left: 0;
+  `}
+`;
 ///////////////////////////////////////////
-const ConditionTextDiv = styled.div `
-position: relative;
-    top: 25%;
-    left: -24%;
-    display: flex;
-    flex-direction: column;
-    backdrop-filter: blur(10px);
-    z-index: 1;
-    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, .3);
-    width: 29rem;
-    height: 20rem;
-   margin: 0 auto;
-   padding: 5px 10px;
-   border-radius: .5rem;
-`
+const ConditionTextDiv = styled.div`
+  position: relative;
+  top: 25%;
+  left: -24%;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 29rem;
+  height: 20rem;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border-radius: 0.5rem;
+  ${sp`
+  top: 10%;
+  left: -20%;
+  width: 90%;
+  height: 16rem;
+  `}
+`;
 
 const ConditionTextH2 = styled.h2`
   font-family: ta-kai-regular, sans-serif;
@@ -133,6 +152,9 @@ const ConditionTextH2 = styled.h2`
   font-style: normal;
   font-size: 2rem;
   padding-left: 5px;
+  ${sp`
+  font-size: 1.7rem;
+  `}
 `;
 
 const ConditionTextP = styled.p`
@@ -142,10 +164,18 @@ const ConditionTextP = styled.p`
   font-size: 1rem;
   text-align: left;
   line-height: 1.6rem;
+  ${sp`
+  font-size: .7rem;
+  line-height: 1.3rem;
+  `}
 `;
 
 
 const Span = styled.span`
   font-weight: bold;
   margin: 5px 0;
+  ${sp`
+  font-size: .7rem;
+  line-height: 1.3rem;
+  `}
 `;

@@ -38,5 +38,5 @@ const Section = styled.section `
     font-family: 'poppins', sans-serif;
     width: 100%;
     height: 100%;
-
+    
 `

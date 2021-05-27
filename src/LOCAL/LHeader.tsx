@@ -2,6 +2,7 @@ import React from 'react';
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
+import { sp } from "../media";
 
 
 type ToggleProps = {
@@ -27,20 +28,20 @@ const THeader:React.FC = () => {
 export default THeader;
 
 
-const Headers = styled.header<ToggleProps> `
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    backdrop-filter: blur(15px);
-    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
-    top: 0;
-    left: 0;
-    width: 100vw;
-    padding: 20px 50px;
-    z-index: 1000;
-    box-sizing: border-box;
-
-`
+const Headers = styled.header<ToggleProps>`
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  backdrop-filter: blur(15px);
+  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 20px 50px;
+  z-index: 1000;
+  box-sizing: border-box;
+`;
 
 const Logo = styled.a `
     position: relative;
@@ -54,32 +55,39 @@ const Logo = styled.a `
     z-index: 2;            
 `
 
-const Toggle = styled.div<ToggleProps> `
-position: relative;
-    width: 50px;
-    height: 50px;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    background-size: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url('../img/menu.png');
+const Toggle = styled.div<ToggleProps>`
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("../img/menu.png");
+  ${sp`
+   left: 35px;
+   top: -3px
+`}
 
-    ${({styles}) => styles ? css `
-        background-image: url('./img/close.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        background-size: 30px;
-        z-index: 1000;
-    ` : ''}
+  ${({ styles }) =>
+    styles
+      ? css`
+          background-image: url("./img/close.png");
+          background-position: center;
+          background-repeat: no-repeat;
+          cursor: pointer;
+          background-size: 30px;
+          z-index: 1000;
+        `
+      : ""}
 
     
     z-index: 3;
-    &:before {
-    content: 'Menu';
+  &:before {
+    content: "Menu";
     position: absolute;
     right: 45px;
     text-transform: uppercase;
@@ -89,7 +97,6 @@ position: relative;
     padding: 2px 5px;
     background-color: #fff;
     color: #111;
-    }
-
-`
+  }
+`;
 

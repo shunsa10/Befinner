@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { tab } from '../media';
+import { sp,tab } from '../media';
 
 const TodoTitleSection:React.FC = () => {
     return (
@@ -48,28 +48,7 @@ object-fit: cover;
 align-content: space-between;
 overflow: hidden;
 `
-// const H2TextDiv = styled.div `
-// position: relative;
-// top: -10%;
-// width: 90%;
-// top: 2rem;
-// display: flex;
-// justify-content: center;
-// padding: 0 5rem;
-// text-align: center;
-// overflow: hidden;
-// margin: 0 auto;
-// `
-// const H2Text = styled.h2`
-//   width: 100%;
-//   font-family: "Times New Roman", Times, serif;
-//   font-weight: normal;
-//   letter-spacing: 0.08em;
-//   text-align: center;
-//   border-bottom: 1px solid rgba(35, 24, 21, 0.3);
-//   z-index: 9;
-//   margin: 0;
-// `;
+
 const TitleDiv = styled.div `
 position: relative;
 top: 1rem;
@@ -79,16 +58,19 @@ padding: 0 6rem;
 
 `
 ///////////////////////////////////////////
-const TitleImg = styled.div `
-position: absolute;
-top: 3rem;
-width: 60%;
-height: 90%;
-background-image: url('./img/img31.jpg');
-background-position: center;
-background-size: cover;
-border-radius: 5px;
-`
+const TitleImg = styled.div`
+  position: absolute;
+  top: 3rem;
+  width: 60%;
+  height: 90%;
+  background-image: url("./img/img31.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 5px;
+  ${sp`
+display: none;
+`}
+`;
 ///////////////////////////////////////////
 const TitleText = styled.div `
 position: relative;
@@ -101,62 +83,80 @@ height: 40%;
 const MainText = styled.div `
 position: relative;
 `
-const YourOnlyP = styled.p `
-content: attr(data-en);
-font-family: saffran, sans-serif;
-font-weight: 800;
-font-style: normal;
-font-size: 5rem;
-margin-left: 8rem;
-margin-bottom: 0;
-${tab `
+const YourOnlyP = styled.p`
+  content: attr(data-en);
+  font-family: saffran, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 5rem;
+  margin-left: 8rem;
+  margin-bottom: 0;
+  ${tab`
   margin-left: 1rem;
 `}
-
-`
-const LiveP = styled.p `
-content: attr(data-en);
-font-family: saffran, sans-serif;
-font-weight: 800;
-font-style: normal;
-font-size: 5rem;
-margin-left: 25rem;
-margin-top: 0;
-margin-bottom: 0;
-${tab `
+  ${sp`
+  margin-left: -10rem;
+  font-size: 4.5rem;
+`}
+`;
+const LiveP = styled.p`
+  content: attr(data-en);
+  font-family: saffran, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 5rem;
+  margin-left: 25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  ${tab`
   margin-left: 15rem;
 `}
-`
-const OnceP = styled.p `
-content: attr(data-en);
-font-family: saffran, sans-serif;
-font-weight: 800;
-font-style: normal;
-font-size: 5rem;
-margin-left: 19rem;
-margin-top: 0;
-${tab `
+  ${sp`
+  margin-left: -6rem;
+  font-size: 4rem;
+`}
+`;
+const OnceP = styled.p`
+  content: attr(data-en);
+  font-family: saffran, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 5rem;
+  margin-left: 19rem;
+  margin-top: 0;
+  ${tab`
   margin-left: 9rem;
 `}
-`
-const YoloPbox = styled.div `
-position: relative;
-    display: flex;
-    flex-direction: column;
-    backdrop-filter: blur(10px);
-    z-index: 10;
-    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
-    width: 26rem;
-    height: 10rem;
-   margin: 0 auto;
-   padding: 5px 10px;
-   border-radius: .5rem;
-    left: 16%;
-    top: -29%;
-${tab `
+  ${sp`
+  margin-left: -2rem;
+  font-size: 4rem;
+`}
+`;
+const YoloPbox = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+  width: 26rem;
+  height: 10rem;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border-radius: 0.5rem;
+  left: 16%;
+  top: -29%;
+  ${tab`
  left: 0;
 `}
-`
+  ${sp`
+  width: 22rem;
+  height: 9rem;
+  left: -11.6rem;
+  top: 1.6rem;
+  font-size: .9rem;
+`}
+`;
 const YoloP = styled.p `
 content: attr(data-en);
 font-family: a-otf-ryumin-pr6n, serif;

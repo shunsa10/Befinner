@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components'
 import {useRef, useEffect} from 'react'
-
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { sp } from "../media";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -86,19 +85,22 @@ const Img = styled.img `
     justify-content: space-between;
     align-items: center;
     `
-const TextDiv = styled.div `
-    /* position: absolute; */
-    display: flex;
-    flex-direction: column;
-    backdrop-filter: blur(10px);
-    z-index: 1;
-    box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
-    width: 25rem;
-    height: 15rem;
-   margin: 0 auto;
-   margin-top: 200px;
-   border-radius: .5rem;
-`
+const TextDiv = styled.div`
+  /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+  width: 25rem;
+  height: 15rem;
+  margin: 0 auto;
+  margin-top: 200px;
+  border-radius: 0.5rem;
+  ${sp`
+    width: 22rem;
+   `}
+`;
 const AboutTitleText = styled.h2`
   content: "data-en";
   font-family: scriptorama-markdown-jf, sans-serif;
@@ -122,4 +124,7 @@ const AboutText = styled.p`
   justify-content: center;
   text-align: center;
   opacity: 0.7;
+  ${sp`
+    font-size: .9rem;
+   `}
 `;

@@ -51,6 +51,7 @@ const DivGlass = styled.div<ToggleProps>`
 const DivContent = styled.div<ToggleProps> `
     position: relative;
     z-index: 10;
+    width: 100%;
     text-align: center;
     transition: 0.5s;
     transition-delay: 1s;

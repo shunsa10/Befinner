@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
-// import { pc, sp, tab } from '../media';
+import { sp } from "../media";
 import {Link} from 'react-router-dom';
 
 const LFooter:React.FC = () => {
@@ -30,28 +30,33 @@ const LFooter:React.FC = () => {
 
 export default LFooter;
 
-const LFooterMain = styled.footer `
-position : relative;
-
-left: 0;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+const LFooterMain = styled.footer`
+  position: relative;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #dae0d1;
   width: 100vw;
   height: 300px;
   overflow: hidden;
-`
-const LFooterH2 = styled.h2 `
-position: relative;
-top: -1rem;
-font-size: 3rem;
-color: #fff;
-text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-text-align: center;
-align-items: center;
-`
+  ${sp`
+width: 100%;
+`}
+`;
+const LFooterH2 = styled.h2`
+  position: relative;
+  top: -1rem;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  align-items: center;
+  ${sp`
+font-size: 2rem;
+`}
+`;
 const LFooterDiv = styled.div `
 align-items: center;
 margin: 0 auto;
@@ -71,36 +76,51 @@ const LiFoo = styled.li `
    
     //propsで渡している　コールバック関数　
 `
-const AaFoo = styled.a `
-    color: #111;
-    font-size: 1.5em;
-    letter-spacing: 4px;
-    text-decoration: none;
-    font-weight: 300;
-    background: #fff;
-    padding: 4px 10px;
-    display: inline-block;
-    border-radius: 5px;
-    &:hover {
-   background-color: #868686;
-   color: #fff;
-    }
-`
-const LFooterLower = styled.div `
-width: 100%;
-height: 30%;
-background-color: #c6ccbd;
-display: flex;
-padding: 20px;
-`
-const LFooterLowerText = styled.h4 `
-margin: 0;
-padding-left: 3rem;
-font-weight: 600;
-opacity: .7;
-`
-const LFooterLowerP = styled.p `
-margin: auto;
-padding-left: 25%;
-opacity: .8;
-`
+const AaFoo = styled.a`
+  color: #111;
+  font-size: 1.5em;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-weight: 300;
+  background: #fff;
+  padding: 4px 10px;
+  display: inline-block;
+  border-radius: 5px;
+  ${sp`
+font-size: .6rem;
+`}
+  &:hover {
+    background-color: #868686;
+    color: #fff;
+  }
+`;
+const LFooterLower = styled.div`
+  width: 100%;
+  height: 30%;
+  background-color: #c6ccbd;
+  display: flex;
+  padding: 20px;
+  ${sp`
+flex-direction: column;
+`}
+`;
+const LFooterLowerText = styled.h4`
+  margin: 0;
+  padding-left: 3rem;
+  font-weight: 600;
+  opacity: 0.7;
+  text-align: center;
+  ${sp`
+font-size: .6rem;
+padding-left: 0;
+`}
+`;
+const LFooterLowerP = styled.p`
+  margin: auto;
+  padding-left: 25%;
+  opacity: 0.8;
+  ${sp`
+font-size: .6rem;
+padding-left: 0;
+`}
+`;

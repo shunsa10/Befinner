@@ -3,7 +3,7 @@ import React from 'react';
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
-
+import { sp, tab } from "../media";
 // import Header from './Header';
 
 
@@ -32,17 +32,24 @@ const Nav: React.FC = () => {
 
 export default Nav;
 
-const UlNav = styled.ul<ToggleProps> `
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    z-index: 100;
-    pointer-events: none;
-     ${({styles}) => styles ? css `
-    pointer-events: auto;
-    ` : ''}
-`
+const UlNav = styled.ul<ToggleProps>`
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  pointer-events: none;
+  ${({ styles }) =>
+    styles
+      ? css`
+          pointer-events: auto;
+          ${sp`
+    left: 48%;
+    `}
+        `
+      : ""}
+`;
 const LiNav = styled.li<ToggleProps>`
     list-style: none;
     text-align: center;

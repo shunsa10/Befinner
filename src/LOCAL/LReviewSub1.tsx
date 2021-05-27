@@ -44,6 +44,7 @@ const ReviewDiv = styled.div`
   height: 200px;
   margin: 10px;
   overflow: hidden;
+ 
 `;
 
 const ReviewDivImg1 = styled.div<ToggleProps>`

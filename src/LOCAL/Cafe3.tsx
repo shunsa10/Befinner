@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import styled, {css} from 'styled-components'
-
+import { sp, tab } from "../media";
 import { gsap } from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
 
@@ -102,59 +102,83 @@ const ContentDiv = styled.div `
     overflow: hidden;
 `
 
-const TitleTextDiv = styled.div `
-width: 100%;
-height: 100%;
-    position: relative;
-    display: flex;
-`
+const TitleTextDiv = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  ${sp`
+  height: 100%;
+`}
+`;
 
 
 
-const TextDiv3 = styled.div<ToggleProps> `
- width: 50%;
-`
+const TextDiv3 = styled.div<ToggleProps>`
+  width: 50%;
+  z-index: 1;
+  ${sp`
+  position: absolute;
+  top: 5rem;    
+  height: 48%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
+`}
+`;
 
 
-const BannerH2 = styled.h2 `
-font-size: 54px;
-text-transform: uppercase;
-font-weight: 800;
-line-height: 1.2em;
-color: #333;
+const BannerH2 = styled.h2`
+  font-size: 54px;
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1.2em;
+  color: #333;
+  ${sp`
+  color: #fff;
+  font-size: 34px;
+`}
+`;
+const BannerP = styled.p`
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.8em;
+  margin: 20px 0;
+  ${sp`
+  color: #fff;
+font-size: .7rem;
+margin: 10px 0;
+`}
+`;
+const BannerA = styled.a`
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  text-decoration: none;
+  padding-left: 15px;
+  transition: 1s;
+  ${sp`
+  color: #fff;
+`}
+  &:hover {
+    color: #81ffd5;
+  }
+`;
 
-`
-const BannerP = styled.p `
-font-size: 1rem;
-color: #333;
-line-height: 1.8em;
-margin: 20px 0;
-
-`
-const BannerA = styled.a `
-position: relative;
-display: inline-block;
-text-transform: uppercase;
-font-weight: 700;
-color: #333;
-letter-spacing: 1px;
-font-size: 1rem;
-text-decoration: none;
-padding-left: 15px;
-transition: 1s;
-&:hover {
-color: #81ffd5;
-}
-`
-
-const BannerImgDiv3 = styled.div `
-    position: relative;
-    top: 5rem;
-    width: 50%;
-    height: 540px;
-    
-   
-`
+const BannerImgDiv3 = styled.div`
+  position: relative;
+  top: 5rem;
+  width: 50%;
+  height: 540px;
+  ${sp`
+   width: 100%;
+`}
+`;
 
 
 const BannerImg3 = styled.img<ToggleProps> `
@@ -176,14 +200,16 @@ const BannerImg3 = styled.img<ToggleProps> `
 `
 
 
-const Icons = styled.div `
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-padding-left: 50px 0;
-
-`
+const Icons = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px 0;
+  ${sp`
+  margin-left: 50%;
+`}
+`;
 
 const IconsUl = styled.ul `
 position: relative;

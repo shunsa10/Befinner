@@ -3,7 +3,7 @@ import React from 'react';
 import styled, {css} from 'styled-components'
 import {useContext} from 'react'
 import {StyleContext} from '../context/StyleContext'
-
+import { sp, tab } from "../media";
 
 
 type ToggleProps = {
@@ -29,6 +29,7 @@ export default LNav;
 
 const LNavDiv = styled.div<ToggleProps> `
     position: absolute;
+    overflow: hidden;
     top: 0;
     left: 0;
     width: 100%;
@@ -57,6 +58,9 @@ const UlNav = styled.ul<ToggleProps> `
     pointer-events: none;
     ${({styles}) => styles ? css `
     pointer-events: auto;
+    ${sp`
+    left: 48%;
+    `}
     ` : ''}
 `
 const LiNav = styled.li<ToggleProps>`

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
-// import { pc, sp, tab } from '../media';
+import { sp, tab } from '../media';
 import {Link} from 'react-router-dom';
 
 const Footer:React.FC = () => {
@@ -29,28 +29,34 @@ const Footer:React.FC = () => {
 
 export default Footer;
 
-const FooterMain = styled.footer `
-position : relative;
-top: 255rem;
-left: 0;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+const FooterMain = styled.footer`
+  position: relative;
+  top: 255rem;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #81fad2;
   width: 100vw;
   height: 300px;
   overflow: hidden;
-`
-const FooterH2 = styled.h2 `
-position: relative;
-top: -1rem;
-font-size: 3rem;
-color: #fff;
-text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-text-align: center;
-align-items: center;
-`
+  ${sp`
+width: 100%;
+`}
+`;
+const FooterH2 = styled.h2`
+  position: relative;
+  top: -1rem;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  align-items: center;
+  ${sp`
+font-size: 2rem;
+`}
+`;
 const FooterDiv = styled.div `
 align-items: center;
 margin: 0 auto;
@@ -70,36 +76,52 @@ const LiFoo = styled.li `
    
     //propsで渡している　コールバック関数　
 `
-const AaFoo = styled.a `
-    color: #111;
-    font-size: 1.5em;
-    letter-spacing: 4px;
-    text-decoration: none;
-    font-weight: 300;
-    background: #fff;
-    padding: 4px 10px;
-    display: inline-block;
-    border-radius: 5px;
-    &:hover {
-   background: #00d8b4;
-   color: #fff;
-    }
-`
-const FooterLower = styled.div `
-width: 100%;
-height: 30%;
-background-color: #60e4b8;
-display: flex;
-padding: 20px;
-`
-const FooterLowerText = styled.h4 `
-margin: 0;
-padding-left: 3rem;
-font-weight: 600;
-opacity: .7;
-`
-const FooterLowerP = styled.p `
-margin: auto;
-padding-left: 25%;
-opacity: .8;
-`
+const AaFoo = styled.a`
+  color: #111;
+  font-size: 1.5em;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-weight: 300;
+  background: #fff;
+  padding: 4px 10px;
+  display: inline-block;
+  border-radius: 5px;
+  ${sp`
+font-size: .6rem;
+`}
+  &:hover {
+    background: #00d8b4;
+    color: #fff;
+  }
+`;
+const FooterLower = styled.div`
+  width: 100%;
+  height: 30%;
+  background-color: #60e4b8;
+  display: flex;
+  padding: 20px;
+
+  ${sp`
+flex-direction: column;
+`}
+`;
+const FooterLowerText = styled.h4`
+  margin: 0;
+  padding-left: 3rem;
+  font-weight: 600;
+  opacity: 0.7;
+  text-align: center;
+  ${sp`
+font-size: .6rem;
+padding-left: 0;
+`}
+`;
+const FooterLowerP = styled.p`
+  margin: auto;
+  padding-left: 25%;
+  opacity: 0.8;
+  ${sp`
+font-size: .6rem;
+padding-left: 0;
+`}
+`;
