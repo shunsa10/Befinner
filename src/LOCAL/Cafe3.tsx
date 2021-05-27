@@ -32,7 +32,6 @@ const Cafe3:React.FC = () => {
                 trigger: el,
                 start: 'top center+=200',
                 toggleActions: 'play none none reverse',
-                // markers: true
             }
         });
     });
