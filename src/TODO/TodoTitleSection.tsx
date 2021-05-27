@@ -92,7 +92,7 @@ border-radius: 5px;
 ///////////////////////////////////////////
 const TitleText = styled.div `
 position: relative;
-top: 3rem;
+top: 1rem;
 left: 50%;
 width: 50%;
 height: 40%;

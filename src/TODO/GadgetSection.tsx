@@ -91,7 +91,7 @@ export default GadgetSection;
 
 const GadgetWrap = styled.div `
 position: relative;
-top: -25rem;
+top: -20rem;
 display: flex;
 justify-content: center;
 align-items: center;

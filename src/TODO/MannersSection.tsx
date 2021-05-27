@@ -117,7 +117,7 @@ top: -8rem;
 
 const MannersImg = styled.div `
 width: 55%;
-height: 80%;
+height: 84.3%;
 background-image: url('./img/img70.jpg');
 background-position: 50% 70px;
 background-size: cover;
@@ -132,7 +132,7 @@ const MannersTextDiv = styled.div `
     box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, .3);
     width: 45%;
-    height: 79%;
+    height: 83%;
    margin: 0 auto;
    padding: 5px 10px;
    border-radius: .5rem;
@@ -155,7 +155,6 @@ const MannersTextP = styled.p`
   top: 7rem;
   padding: 5px;
   padding-bottom: 10px;
-  margin: 0;
   font-size: 1rem;
   text-align: left;
   line-height: 1.6rem;
