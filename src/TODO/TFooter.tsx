@@ -31,7 +31,7 @@ export default Footer;
 
 const FooterMain = styled.footer`
   position: relative;
-  top: 255rem;
+  top: 290rem;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -43,6 +43,7 @@ const FooterMain = styled.footer`
   overflow: hidden;
   ${sp`
 width: 100%;
+ top: 255rem;
 `}
 `;
 const FooterH2 = styled.h2`

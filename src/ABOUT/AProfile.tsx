@@ -232,6 +232,9 @@ const ProfilImg = styled.img`
   border-radius: 50%;
   margin: 0.5rem auto;
   z-index: 10;
+  ${sp`
+ left: 33%;
+  `}
 `;
 const ProText = styled.div`
   position: absolute;
