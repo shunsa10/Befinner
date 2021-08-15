@@ -13,6 +13,9 @@
 
 
 
+
+
+
 **作成した目的**
 
 
@@ -26,46 +29,50 @@ befinnerはbeginner（初心者）とfin（サーフィンにおいて舵の役�
 
 
 URL
-
-
 <https://befinner.vercel.app/>
+
+
+
 
 
 
 **使用技術**
 
 
--TypeScript
+- TypeScript
 
 
--React
+- React
 
 
--FireBase
+- FireBase
 
 
--NoSQL
+- NoSQL
 
 
 
-Reactライブラリ
 
 
--react-router-dom 
+
+**Reactライブラリ**
 
 
--material-ui/core 
+- react-router-dom 
 
 
--styled-components 
+- material-ui/core 
 
 
--framer-motion 
+- styled-components 
 
 
--react-swipeable-views 
+- framer-motion 
 
 
--react-icons 
+- react-swipeable-views 
+
+
+- react-icons 
 
 
