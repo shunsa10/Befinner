@@ -1,15 +1,15 @@
 <img width="1440" alt="スクリーンショット 2021-08-16 4 40 13" src="https://user-images.githubusercontent.com/76087062/129490458-2c3ab42d-e2d0-4f0b-a817-03bb5246eefe.png">
 
 
-***Befinner***
+**Befinner**
 
-スクロールアニメーションやトランジションを取り入れたブログサイトです。
-
-
-ユーザーはアカウント登録することでAboutページを閲覧できるようになります。
+    スクロールアニメーションやトランジションを取り入れたブログサイトです。
 
 
-使っていて気持ち良いアニメーショーンを目指しました。
+    ユーザーはアカウント登録することでAboutページを閲覧できるようになります。
+
+
+    使っていて気持ち良いアニメーショーンを目指しました。
 
 
 
@@ -19,17 +19,17 @@
 **作成した目的**
 
 
-befinnerはbeginner（初心者）とfin（サーフィンにおいて舵の役割を果たす）を掛け合わせた造語。
+    befinnerはbeginner（初心者）とfin（サーフィンにおいて舵の役割を果たす）を掛け合わせた造語。
 
 
-私は小さい頃からサーフィンをしており、あるとき友達にサーフィンを教えてくれと頼まれました。
+    私は小さい頃からサーフィンをしており、あるとき友達にサーフィンを教えてくれと頼まれました。
 
 
-そんな初心者の舵の役割なればと思い作成しました。
+    そんな初心者の舵の役割なればと思い作成しました。
 
 
 URL
-<https://befinner.vercel.app/>
+    <https://befinner.vercel.app/>
 
 
 
@@ -39,16 +39,16 @@ URL
 **使用技術**
 
 
-- TypeScript
+    - TypeScript
 
 
-- React
+    - React
 
 
-- FireBase
+    - FireBase
 
 
-- NoSQL
+    - NoSQL
 
 
 
@@ -58,21 +58,21 @@ URL
 **Reactライブラリ**
 
 
-- react-router-dom 
+    - react-router-dom 
 
 
-- material-ui/core 
+    - material-ui/core 
 
 
-- styled-components 
+    - styled-components 
 
 
-- framer-motion 
+    - framer-motion 
 
 
-- react-swipeable-views 
+    - react-swipeable-views 
 
 
-- react-icons 
+    - react-icons 
 
 
