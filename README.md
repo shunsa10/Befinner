@@ -29,7 +29,7 @@
 
 
 URL
-    <https://befinner.vercel.app/>
+    <https://www.befinner.com/>
 
 
 
