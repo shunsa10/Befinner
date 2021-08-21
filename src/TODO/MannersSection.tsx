@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import styled from 'styled-components'
 import { sp } from '../media';
+import { tab } from '../media';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -48,7 +49,7 @@ const MannersSection:React.FC = () => {
         <MannersDiv>
           <MannersImg ref={addToRefs}></MannersImg>
           <MannersTextDiv ref={addToRefs}>
-            <MannersTextH2>05 ありがちなローカルルール</MannersTextH2>
+            <MannersTextH2>05 ローカルルール</MannersTextH2>
             <MannersTextP>
               <Span>一つの波には一人までというローカルルールがあります。</Span>
               <br />
@@ -127,6 +128,10 @@ const MannersImg = styled.div`
   background-position: 50% 70px;
   background-size: cover;
   border-radius: 5px;
+  ${tab`
+  width: 45%;
+  
+  `}
   ${sp`
   width: 100%;
   height: 45rem;
@@ -145,6 +150,11 @@ const MannersTextDiv = styled.div`
   margin: 0 auto;
   padding: 5px 10px;
   border-radius: 0.5rem;
+  ${tab`
+  width: 55%;
+  
+  `}
+
   ${sp`
   position: relative;
   width: 100%;
@@ -162,6 +172,10 @@ const MannersTextH2 = styled.h2`
   padding-left: 5px;
   z-index: 10;
   margin: 10px 45px;
+  ${tab`
+  top: 8rem;
+  font-size: 1.7rem;
+  `}
   ${sp`
   top: 1rem;
   font-size: 1.3rem;
@@ -170,13 +184,18 @@ const MannersTextH2 = styled.h2`
 
 const MannersTextP = styled.p`
   position: relative;
-  top: 7rem;
+  top: 10rem;
   padding: 5px;
   padding-bottom: 10px;
   font-size: 1rem;
   text-align: left;
   line-height: 1.6rem;
   margin: 0 auto;
+  ${tab`
+  top: 10rem;
+  font-size: .9rem;
+  line-height: 1.1rem;
+  `}
   ${sp`
   top: 1rem;
   font-size: .7rem;

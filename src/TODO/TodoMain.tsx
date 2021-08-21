@@ -6,6 +6,7 @@ import DangerSection from './DangerSection'
 import MannersSection from './MannersSection'
 import GadgetSection from './GadgetSection'
 import styled from 'styled-components'
+import { sp } from "../media";
 
 const TodoMain:React.FC = () => {
  
@@ -17,7 +18,9 @@ const TodoMain:React.FC = () => {
            <ConditionSection />
            <DangerSection />
            <MannersSection />
+           <GadgetDiv>
            <GadgetSection />
+           </GadgetDiv>
         </TodoMainDiv>
         </>
     );
@@ -36,3 +39,9 @@ const TodoMainDiv = styled.div `
     background-image: url('../img/img100.jpg');
     background-size: cover;
 `
+
+const GadgetDiv = styled.div`
+  ${sp`
+display: none;
+ `}
+`;

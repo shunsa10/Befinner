@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import { sp } from '../media';
+import { tab } from '../media';
 import {Link} from 'react-router-dom';
 
 const Footer:React.FC = () => {
@@ -41,9 +42,13 @@ const FooterMain = styled.footer`
   width: 100vw;
   height: 300px;
   overflow: hidden;
+  ${tab`
+width: 100%;
+ top: 280rem;
+`}
   ${sp`
 width: 100%;
- top: 255rem;
+ top: 220rem;
 `}
 `;
 const FooterH2 = styled.h2`

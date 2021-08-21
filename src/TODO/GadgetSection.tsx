@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
-import { sp } from '../media';
+import { tab } from '../media';
 
 const GadgetSection:React.FC = () => {
 
@@ -91,17 +91,17 @@ export default GadgetSection;
 
 const GadgetWrap = styled.div`
   position: relative;
-  top: -20rem;
+  top: -5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100%;
 
-  ${sp`
+  ${tab`
   flex-wrap: wrap;
-  top: -53rem;
-  min-height: 38rem;
-`}
+  top: -10rem;
+  
+`} 
 `;
 
 const GadgetConteiner = styled.div`
@@ -111,9 +111,9 @@ const GadgetConteiner = styled.div`
   flex-wrap: wrap;
   transform-style: preserve-3d;
   perspective: 500px;
-  ${sp`
+  ${tab`
   flex-wrap: wrap;
- margin: 0 5px;
+ margin: 0 10px;
 `}
 `;
 const Gadgetbox = styled.div`
@@ -123,9 +123,9 @@ const Gadgetbox = styled.div`
   background: #000;
   transition: 0.5s;
   transform-style: preserve-3d;
-  ${sp`
-width: 150px;
-  height: 190px;
+  ${tab`
+width: 180px;
+  height: 210px;
 `}
   ${GadgetWrap}:hover & {
     transform: rotateY(25deg);
@@ -192,8 +192,8 @@ const GadgetContent = styled.div`
   padding: 20px;
   align-items: flex-end;
   box-sizing: border-box;
-  ${sp`
-padding: 10px;
+  ${tab`
+padding: 15px;
 `}
 `;
 const GadgetTextBox = styled.div `
@@ -206,8 +206,8 @@ const GadgetH2 = styled.h2`
   font-size: 20px;
   transform: translateY(200px);
   opacity: 0;
-  ${sp`
-font-size: .2rem;
+  ${tab`
+font-size: .3rem;
 `}
   ${Gadgetbox}:hover & {
     transform: translateY(0px);
@@ -221,8 +221,8 @@ const GadgetP = styled.p`
   font-size: 14px;
   transform: translateY(200px);
   opacity: 0;
-  ${sp`
-font-size: .1rem;
+  ${tab`
+font-size: .3rem;
 `}
   ${Gadgetbox}:hover & {
     transform: translateY(0px);
@@ -241,7 +241,7 @@ const Content = styled.a`
   opacity: 0;
   transition: 0.5s;
   transform: translateY(50px);
-  ${sp`
+  ${tab`
 font-size: 3px;
 `}
   ${Gadgetbox}:hover & {
