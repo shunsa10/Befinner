@@ -23,11 +23,9 @@ const About:React.FC = () => {
               <ANav />
               <AMain />
            </AboutMainSection>
-
            <AboutProSection>
               <AProfile />
            </AboutProSection>
-
         </MainDiv>
         <AFooter />
       </StyleProvider>
