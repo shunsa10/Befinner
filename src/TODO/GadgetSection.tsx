@@ -89,6 +89,7 @@ const GadgetSection:React.FC = () => {
 
 export default GadgetSection;
 
+//一番下の４枚並びの画像
 const GadgetWrap = styled.div`
   position: relative;
   top: -5rem;

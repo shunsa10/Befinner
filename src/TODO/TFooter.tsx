@@ -30,6 +30,8 @@ const Footer:React.FC = () => {
 
 export default Footer;
 
+
+//footerタグ、
 const FooterMain = styled.footer`
   position: relative;
   top: 290rem;
