@@ -92,7 +92,7 @@ const MannersSection:React.FC = () => {
 
 export default MannersSection;
 
-
+//ローカルルールに関するdiv
 const MannersWrap = styled.div`
   position: relative;
   display: flex;
