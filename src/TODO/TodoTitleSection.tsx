@@ -5,12 +5,8 @@ import { sp,tab } from '../media';
 const TodoTitleSection:React.FC = () => {
     return (
         <TitleWrap>
-{/* 
-            <H2TextDiv>
-                <H2Text>To beginners</H2Text>
-            </H2TextDiv> */}
-
             <TitleDiv>
+
                 <TitleImg></TitleImg>
 
                 <TitleText>
@@ -61,24 +57,29 @@ padding: 0 6rem;
 const TitleImg = styled.div`
   position: absolute;
   top: 3rem;
-  width: 60%;
+  width: 50%;
   height: 90%;
   background-image: url("./img/img31.jpg");
   background-position: center;
   background-size: cover;
   border-radius: 5px;
+  ${tab`
+height: 80%;
+`}
   ${sp`
 display: none;
 `}
 `;
 ///////////////////////////////////////////
-const TitleText = styled.div `
-position: relative;
-top: 1rem;
-left: 50%;
-width: 50%;
-height: 40%;
-
+const TitleText = styled.div`
+  position: relative;
+  top: -4rem;
+  left: 50%;
+  width: 50%;
+  height: 40%;
+  ${tab`
+  left: 40%;
+`}
 `;
 const MainText = styled.div `
 position: relative;
@@ -88,15 +89,16 @@ const YourOnlyP = styled.p`
   font-family: saffran, sans-serif;
   font-weight: 800;
   font-style: normal;
-  font-size: 5rem;
-  margin-left: 8rem;
-  margin-bottom: 0;
+  font-size: 8rem;
+  margin-left: -1rem;
+  margin-bottom: -1rem;
   ${tab`
   margin-left: 1rem;
+  font-size: 6rem;
 `}
   ${sp`
   margin-left: -10rem;
-  font-size: 4.5rem;
+  font-size: 5rem;
 `}
 `;
 const LiveP = styled.p`
@@ -104,16 +106,17 @@ const LiveP = styled.p`
   font-family: saffran, sans-serif;
   font-weight: 800;
   font-style: normal;
-  font-size: 5rem;
+  font-size: 7rem;
   margin-left: 25rem;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: -1rem;
   ${tab`
   margin-left: 15rem;
+  font-size: 6rem;
 `}
   ${sp`
   margin-left: -6rem;
-  font-size: 4rem;
+  font-size: 4.5rem;
 `}
 `;
 const OnceP = styled.p`
@@ -121,15 +124,16 @@ const OnceP = styled.p`
   font-family: saffran, sans-serif;
   font-weight: 800;
   font-style: normal;
-  font-size: 5rem;
+  font-size: 7rem;
   margin-left: 19rem;
   margin-top: 0;
   ${tab`
   margin-left: 9rem;
+  font-size: 6rem;
 `}
   ${sp`
   margin-left: -2rem;
-  font-size: 4rem;
+  font-size: 4.5rem;
 `}
 `;
 const YoloPbox = styled.div`
@@ -137,15 +141,14 @@ const YoloPbox = styled.div`
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(10px);
-  z-index: 10;
+  z-index: 1000;
   box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
   width: 26rem;
   height: 10rem;
   margin: 0 auto;
   padding: 5px 10px;
   border-radius: 0.5rem;
-  left: 16%;
-  top: -29%;
+  top: -6rem;
   ${tab`
  left: 0;
 `}
